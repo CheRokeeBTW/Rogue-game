@@ -1,0 +1,4453 @@
+/*Style the main avatar*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+body{
+   padding: 0;
+   margin: 0;
+   background-color: black
+}
+
+#maze_container{
+   position: absolute;
+         transition: 0.3s linear all;
+         display: grid;
+}
+
+#main_viewport {
+   position: relative;
+   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+#wrap{
+   background: black;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   height: 100vh;
+}
+
+#main_viewport::after {
+   position: absolute;
+   content: "";
+   background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 1) 100%);
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 2
+}
+
+#main_viewport::before {
+   position: absolute;
+    background-position: center;
+    background-size: 280px;
+    background-repeat: no-repeat;
+   content: "";
+   width: 200px;
+   height: 200px;
+   z-index: 2;
+  
+}
+#test{
+  height: 250px;
+  width: 250px;
+  left: calc(50% - 5px);
+   top: calc(50% - 5px);
+  position: absolute;
+  margin-left: -110px;
+margin-top: -110px;
+background-image: url(/mazepic/__Idle.gif);
+background-repeat: no-repeat;
+background-size: 250px;
+}
+
+#wrap{
+   position: relative;
+         overflow: hidden;
+}
+
+#wrap::after {
+   position: absolute;
+   content: "";
+   background: radial-gradient(circle, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 43%, rgba(0, 0, 0, 1) 100%);
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   z-index: 2;
+}
+
+.testing{
+  background-image: url(/mazepic/__Attack2NoMovement.gif);
+  background-size: 200px;
+  background-position: center;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  z-index: 25;
+  background-repeat: no-repeat;
+}
+
+::backdrop {
+   z-index: 30;
+  color: black;
+}
+
+#dialog{
+   background-color: rgb(26, 25, 25);
+   border-radius: 25px;
+   width: 700px;
+   height: 460px;
+   display: flex;
+   font-family: pixelated;
+   z-index: -999;
+   background-image: url(/images/fd-removebg-preview.png);
+   /* background-repeat: no-repeat; */
+   background-size: 50%;
+}
+
+/* .box #sword{
+   width: 350px;
+   height: 350px;
+}
+
+.box {
+   height: 350px;
+   width: 350px;
+   position: relative;
+ }
+
+.box__line {
+   position: absolute;
+   background: rgb(109, 109, 107);
+ }
+ .box__line--top, .box__line--bottom {
+   height: 8px;
+   width: 100%;
+ }
+ .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
+   content: "";
+   position: absolute;
+   width: 8px;
+   height: 8px;
+   background: rgb(109, 109, 107);
+ }
+ .box__line--top {
+   top: -8px;
+ }
+ .box__line--top::before {
+   left: 0;
+   bottom: -8px;
+ }
+ .box__line--top::after {
+   right: 0;
+   bottom: -8px;
+ }
+ .box__line--bottom {
+   bottom: -8px;
+ }
+ .box__line--bottom::before {
+   left: 0;
+   top: -8px;
+ }
+ .box__line--bottom::after {
+   right: 0;
+   top: -8px;
+ }
+ .box__line--left, .box__line--right {
+   width: 8px;
+   height: 100%;
+ }
+ .box__line--left {
+   left: -8px;
+ }
+ .box__line--right {
+   right: -8px;
+ } */
+
+ .weapon{
+  margin-top: -100px;
+  align-self: center;
+  align-content: center;
+  justify-content: center;
+  width: 300px;
+  display: grid;
+ }
+
+#dialog .text{
+   display: grid;
+   margin-left: 25px;
+}
+
+#dialog p{
+   color: #94a535;
+}
+
+#dialog p1{
+   color: #acaca3;
+   margin-bottom:  25px;
+}
+
+#dialog p2{
+  color: #94a535;
+}
+
+#dialog p3{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#dialog p4{
+  color: #94a535;
+}
+
+#dialog p5{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#dialog p6{
+  color: #94a535;
+}
+
+#dialog p7{
+  color: #acaca3;
+}
+
+#dialog p8{
+  color: #ffffff;
+}
+
+#dialog p9{
+  color: #ffffff;
+}
+
+img#sword{
+  margin-top: 30px;
+}
+
+.box h{
+  position: absolute;
+  top: 400px;
+  left: 150px;
+  border-bottom: solid #ffffff;
+  color: #ffffff;
+}
+
+#dialog1::backdrop {
+   z-index: 35;
+   margin: 0;
+   padding: 0;
+}
+
+.description{
+  display: grid;
+  height: 50px;
+  font-size: 11px;
+  position: absolute;
+  top: 360px;
+  left: 415px;
+  width: 280px;
+}
+
+#skeletonMaceInspect{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#skeletonMaceInspect .text{
+  display: grid;
+  margin-left: 25px;
+}
+
+#skeletonMaceInspect p{
+  color: #94a535;
+}
+
+#skeletonMaceInspect p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#skeletonMaceInspect p2{
+ color: #94a535;
+}
+
+#skeletonMaceInspect p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#skeletonMaceInspect p4{
+ color: #94a535;
+}
+
+#skeletonMaceInspect p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#skeletonMaceInspect p6{
+  color: #94a535;
+}
+
+#skeletonMaceInspect p7{
+  color: #acaca3;
+}
+
+#skeletonMaceInspect p8{
+  color: #ffffff;
+}
+
+#skeletonMaceInspect p9{
+  color: #ffffff;
+}
+
+img#mace{
+  margin-top: 30px;
+  margin-right: 10px;
+  height: 350px;
+}
+
+#dialog1{
+   background-color: rgb(22, 22, 22);
+   width: 800px;
+   height: 430px;
+   background-image: url(/images/dungeon\ background\ 7.png);
+   background-size: 100%;
+}
+
+@font-face{
+   font-family: Pixelated;
+   src: url(/images/font/slkscreb.ttf);
+ }
+
+#dialog1 p {
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   position: relative;
+   margin-top: 20px;
+   color: #ffffff;
+   font-size: 12px;
+   letter-spacing: .02em; /* Adjust as needed */
+   font-family: Pixelated;
+   animation: 
+     typing 3.5s steps(40, end), 
+     blink-caret .75s step-end infinite,
+     afterTyping 3.5s steps(40, end);
+ }
+
+ #dialog1 p1{
+   color: #ffffff;
+   font-family: Pixelated;
+   position: relative;
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: auto auto;
+ }
+
+ #dialog1 p2{
+   color: #fff;
+   font-family: Pixelated;
+   position: relative;
+   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+ }
+
+ #npc{
+   display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 700px;
+ }
+
+ #npc #npc{
+   left: 30px;
+   padding-left: 20px;
+   height: 160px;
+   width: 100px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #abaca7;
+ }
+
+ #Aris{
+   padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 180px;
+   width: 160px;
+   margin-left: 180px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #861f81;
+ }
+
+ #Aaris{
+   left: 20px;
+   bottom: 5px;
+   position: relative;
+ }
+
+ #npc #text{
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   color: #fff;
+   display: inline-block;
+   margin-top: 70px;
+   width: 300px;
+   letter-spacing: .02em; /* Adjust as needed */
+   font-family: Pixelated;
+   animation: 
+     blink-caret .75s step-end infinite,
+     afterTyping 2s steps(40, end) forwards;
+ }
+
+ .HeroSheet h{
+   font-family: pixelated;
+   color: rgb(212, 224, 224);
+   position: relative;
+   top: 10px;
+ }
+
+ .HeroSheet h1{
+   font-family: pixelated;
+   color: rgb(141, 28, 28);
+   font-size: 15px;
+   position: relative;
+   bottom: 10px;
+ }
+
+ .NPCsheet h{
+   font-family: pixelated;
+   color: rgb(122, 126, 126);
+   margin-left: 620px
+ }
+
+ #npc #text1{
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   white-space: nowrap; /* Keeps the content on a single line */
+   color: #fff;
+   display: inline-block;
+   letter-spacing: .02em; /* Adjust as needed */
+   font-family: Pixelated;
+   animation: 
+     blink-caret .75s step-end infinite,
+     afterTyping 1s steps(40, end);
+     animation-delay: 3.8s;
+     opacity: 0;
+     animation-fill-mode: forwards;
+     -webkit-animation-delay: 3.8s;
+ } 
+
+ .HeroAns{
+   display: grid;
+   border: solid #080808;
+   background-color: #474747;
+   text-align: center;
+   width: 100%;
+   font-family: pixelated;
+   color: #ffffff;
+ }
+
+ .HeroAns #heroChoice{
+   text-align: center;
+   display: grid;
+   padding: 5;
+   font-size: 15px;
+   color: #ffffff;
+ }
+
+ .HeroAns #heroChoiceAris{
+   text-align: center;
+   display: grid;
+   padding: 5;
+   font-size:  15px;
+   color: #ffffff;
+ }
+
+ #heroChoiceAris:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ .HeroAns #heroChoiceAris1{
+   text-align: center;
+   display: grid;
+   padding: 5;
+   font-size:  15px;
+   color: #ffffff;
+ }
+
+ #heroChoiceAris1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoice:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+   color: #fa0000;
+ }
+
+ #heroChoice1{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+ }
+
+ #heroChoiceAris2{
+   text-align: center;
+   padding: 5;
+   font-size:  15px;
+ }
+
+ #heroChoiceAris2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoiceAris_1{
+   text-align: center;
+   padding: 5;
+   font-size:  15px;
+   display: none;
+ }
+
+ #heroChoiceAris_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris_2{
+   text-align: center;
+   padding: 5;
+   font-size:  15px;
+   display: none;
+ }
+
+ #heroChoiceAris_2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoice1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+   color: #7a7b86;
+ }
+
+ #heroChoiceAris1_2{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris1_1{
+   text-align: center;
+   padding: 5;
+   font-size:  15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris2_1{
+   text-align: center;
+   padding: 5;
+   font-size:  15px;
+   display: none;
+ }
+
+ #heroChoiceAris2_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris1_1_1{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris1_1_2{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1_2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size:  20px;
+ }
+
+ #heroChoiceAris1_1_1_1{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1_1_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoiceAris1_1_1_2{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1_1_2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoiceAris1_1_1_1_2{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceAris1_1_1_1_2:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoiceAris1_1_1_1_1{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ } 
+
+ #heroChoiceAris1_1_1_1_1:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #heroChoiceArisFINAL{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+   display: none;
+ }
+
+ #heroChoiceArisFINAL:hover{
+   text-align: center;
+   display: grid;
+   cursor: pointer;
+   font-size: 20px;
+ }
+
+ #lootAris{
+   height: 300px;
+   width: 500px;
+   background-color: rgb(255, 250, 250);
+   font-family: pixelated;
+   text-align: center;
+   background-image: url(/images/background_loot.jpg);
+   background-size: 120%;
+   color: #fff;
+   background-repeat: no-repeat;
+}
+
+#lootAris h{
+   padding: 30px;
+}
+
+ #heroChoice2{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+ }
+
+ #heroChoice3{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+ }
+
+ #heroChoice4{
+   text-align: center;
+   padding: 5;
+   font-size: 15px;
+ }
+
+ #hero{
+   height: 187px;
+   border-top: solid;
+   padding: 10px;
+   align-items: center;
+   text-align: center;
+   display: flex;
+ }
+
+ #dialog1 img{
+   position: absolute;
+   border-radius: 4px;
+   left: 500px;
+   padding: 5px;
+   width: 100px;
+ }
+ 
+#Hero #knight{
+   left: 0;
+   position: relative;
+   padding: 20px;
+   height: 120px;
+   width: 110px;
+   border-right: solid #42391c;
+ }
+
+ .button1{
+   position: relative;
+   justify-content: center;
+   text-align: center;
+   display: flex;
+   float: right;
+   height: 20px;
+   width: 15px;
+   top: 20px;
+   background-image: url(/images/close-button-png-30230.png);
+   background-size: 20px;
+   background-position: center;
+ }
+ 
+ #inventory {
+   display: grid;
+   background-image: url(/images/old-paper-background-0adw00dqwib37b91.jpg);
+   grid-gap: 0px;
+   grid-template-columns: repeat(4,minmax(0,1fr));
+   grid-template-rows: repeat(5,minmax(0,1r));
+   grid-template-rows: 150px 150px 150px 150px 150px;
+   grid-template-columns: 200px 200px 200px 200px;
+   align-items: center;
+   grid-column-start:auto;
+   grid-row-start:auto;
+   border:solid #fff;
+   position: absolute;
+   left: 50%;
+   margin-left: -450px;
+   top: 50%;
+   margin-top: -450px;
+   z-index: 999;
+   width: 900px;
+   height: 900px;
+}
+
+#inventory h{
+   padding: 20px;
+font-family: pixelated;
+color: #fff;
+margin-left: 115px;
+text-align: center;
+font-size: 25px;
+}
+
+#DjallDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/hell-background-pb2y5cef9ebsiuhl.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#DjallDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+#DjallDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+img#djall{
+  padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 170px;
+   width: 165px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #b19829;
+}
+
+#djallH{
+  font-family: pixelated;
+   color: rgb(233, 12, 23);
+   margin-left: 600px;
+   font-size: 13px;
+}
+
+#heroChoiceDjall{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceDjall:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceDjall{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceDjall:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceDjall1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceDjall1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceDjall_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceDjall_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceDjall_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceDjall_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceDjall_1_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceDjall_1_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#DjallFight{
+  border:solid #080808;
+  background: #050505;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -300px;
+  z-index: 4;
+  width: 900px;
+  height: 700px;
+  text-align: center;
+  display: none;
+  background-image: url(/images/finalfight.jpg);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#DjallFight .DjallDiff{
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.DjallDiff h{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.DjallDiff #knight{
+  height: 200px;
+  bottom: 320px;
+  position: absolute;
+  left: 30px;
+}
+
+.DjallDiff #HeroHPDjall{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  left: 60px;
+  bottom: 260px;
+}
+
+.DjallDiff #npcHPDjall{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  right: 90px;
+  bottom: 260px;
+}
+
+.DjallDiff #npc{
+  height: 240px;
+  width: 210px;
+  position: absolute;
+  left: 600px;
+  top: 152px;
+}
+
+.DjallDiff #diceAnimatedDjall{
+  justify-self: center;
+  display: none;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.DjallDiff #diceDjall{
+  justify-self: center;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+#DjallFight h{
+  padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+}
+
+.ResultDjall #infoD{
+  font-family: pixelated;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultDjall #armorInfoD{
+  font-family: pixelated;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultDjall #SuccessOrFailD{
+  font-family: pixelated;
+  margin-top: 30px;
+}
+
+.ResultDjall #RerollD{
+  font-family: pixelated;
+  display: grid;
+  color: #ffffff;;
+}
+
+#GameEnd{
+  height: 310px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  text-align: center;
+  background-image: url(/images/escape.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+  display: grid;
+}
+
+#GameEnd h{
+  top: 100px;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+#GameEnd h1{
+  padding: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#GameEnd h2{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+ .hidden{
+   visibility : none;
+   }
+
+   .sword{
+      background-image: url(/images/sword-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 65px;
+      display: relative;
+      background-size: 130px;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+   }
+
+   .healthPotionINV{
+      background-image: url(/images/health-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-left: 65px;
+      background-size: 130px;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+   }
+
+   .skeletonMaceINV{
+      background-image: url(/images/mace.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 130px;
+      margin-left: 65px;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+   }
+
+   .daggerINV{
+      background-image: url(/images/dagger-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 130px;
+      margin-left: 65px;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+   }
+
+   .ringINV{
+      background-image: url(/images/ring-removebg-preview\ \(1\).png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 130px;
+      margin-left: 65px;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+   }
+
+   .ringOfHealthINV{
+    background-image: url(/images/ringBlight-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px;
+    margin-left: 65px;
+    border: solid;
+    border-color: rgb(65, 53, 22);
+    width: 130px;
+    height: 130px;
+ }
+
+ .armorOfHealthINV{
+  background-image: url(/images/armor.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+.swordOfDjallINV{
+  background-image: url(/images/SwordOfDjall-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+.infiniteArmorINV{
+  background-image: url(/images/InfiniteArmor-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+.hoarderRingINV{
+  background-image: url(/images/HoarderRing-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+.greatSwordINV{
+  background-image: url(/images/greatsword-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+.eternalRingINV{
+  background-image: url(/images/EternalRing-removebg-preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 130px;
+  margin-left: 65px;
+  border: solid;
+  border-color: rgb(65, 53, 22);
+  width: 130px;
+  height: 130px;
+}
+
+   .sword:active {
+      transform: scale(0.9);
+    }
+
+   .dice{
+      background-image: url(/images/diceStatic-removebg-preview.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%;
+      border: solid;
+      border-color: rgb(65, 53, 22);
+      width: 130px;
+      height: 130px;
+      margin-left: 65px;
+   }
+
+   #diceInspect{
+    background-color: rgb(26, 25, 25);
+    border-radius: 25px;
+    width: 700px;
+    height: 460px;
+    display: flex;
+    font-family: pixelated;
+    z-index: -999;
+    background-image: url(/images/fd-removebg-preview.png);
+    /* background-repeat: no-repeat; */
+    background-size: 50%;
+  }
+
+  #diceInspect .text{
+    display: grid;
+    margin-left: 55px;
+    font-size: 13px;
+  }
+
+  #diceInspect p{
+    color: #94a535;
+  }
+  
+  #diceInspect p1{
+    color: #acaca3;
+    margin-bottom:  25px;
+  }
+  
+  #diceInspect p2{
+   color: #94a535;
+  }
+  
+  #diceInspect p3{
+   color: #acaca3;
+   margin-bottom:  25px;
+  }
+  
+  #diceInspect p4{
+   color: #94a535;
+  }
+  
+  #diceInspect p5{
+   color: #acaca3;
+   margin-bottom:  25px;
+  }
+  
+  #diceInspect p6{
+    color: #94a535;
+  }
+  
+  #diceInspect p7{
+    color: #acaca3;
+  }
+  
+  #diceInspect p8{
+    color: #ffffff;
+  }
+  
+  #diceInspect p9{
+    color: #ffffff;
+  }
+
+  #diceInspect #dice{
+    margin-top: 60px;
+    height: 330px;
+    margin-right: 10px;
+  }
+
+#HeroStats{
+   background: #050505;
+   background-image: url(/images/hero-removebg-preview.png);
+   position: absolute;
+   border: solid #fffafa;
+   border-radius: 70px;
+   left: 50%;
+   margin-left: -220px;
+   top: 50%;
+   margin-top: -300px;
+   z-index: 4;
+   width: 440px;
+   height: 570px;
+   text-align: center;
+   display: none;
+}
+
+#diceInspect .description{
+  position: absolute;
+  top: 350px;
+  font-size: 10px;
+  left: 412px;
+}
+
+#healthPotionIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  background-size: 50%;
+}
+
+#healthPotionIns .weapon{
+  margin-left: 60px;
+  font-size: 12px;
+}
+
+#healthPotionIns .text{
+  display: grid;
+  margin-left: 25px;
+}
+
+#healthPotionIns p{
+  color: #94a535;
+}
+
+#healthPotionIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#healthPotionIns p2{
+ color: #94a535;
+ margin-bottom: 3px;
+}
+
+#healthPotionIns p3{
+ color: #acaca3;
+ margin-bottom: 3px;
+}
+
+#healthPotionIns p4{
+ color: #94a535;
+}
+
+#healthPotionIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#healthPotionIns p6{
+ color: #94a535;
+}
+
+#healthPotionIns p7{
+ color: #acaca3;
+}
+
+#healthPotionIns p8{
+ color: #ffffff;
+}
+
+#healthPotionIns p9{
+ color: #ffffff;
+}
+
+#healthPotionIns p10{
+  color: #ffffff;
+  margin-bottom: 3px;
+ }
+
+ #healthPotionIns p11{
+  color: #ffffff;
+  margin-bottom:  25px;
+ }
+
+ #healthPotionIns .description{
+  width: 30%;
+  left: 445px;
+ }
+
+ img#potion{
+  margin-top: 90px;
+  margin-left: 50px;
+  height: 250px;
+}
+
+#daggerIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#daggerIns .weapon{
+  margin-left: 333px;
+}
+
+#daggerIns .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#daggerIns .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#daggerIns p{
+  color: #94a535;
+}
+
+#daggerIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#daggerIns p2{
+ color: #94a535;
+}
+
+#daggerIns p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#daggerIns p4{
+ color: #94a535;
+}
+
+#daggerIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#daggerIns p6{
+  color: #94a535;
+}
+
+#daggerIns p7{
+  color: #acaca3;
+}
+
+#daggerIns p8{
+  color: #ffffff;
+}
+
+#daggerIns #daggerIn{
+  margin-top: 120px;
+  height: 180px;
+  margin-right: 50px;
+  position: absolute;
+  left: 80px;
+}
+
+#daggerIns p9{
+  color: #ffffff;
+}
+
+#ringIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#ringIns .weapon{
+  margin-left: 335px;
+  margin-bottom: 60px;
+}
+
+#ringIns .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#ringIns .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#ringIns p{
+  color: #94a535;
+}
+
+#ringIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#ringIns p2{
+  color: #94a535;
+  font-size: 12px;
+}
+
+#ringIns p3{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#ringIns p4{
+ color: #94a535;
+}
+
+#ringIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#ringIns p6{
+  color: #94a535;
+}
+
+#ringIns p7{
+  color: #acaca3;
+}
+
+#ringIns p8{
+  color: #ffffff;
+}
+
+#ringIns p9{
+  color: #ffffff;
+}
+
+#ringIns #ringIn{
+  margin-top: 120px;
+  height: 180px;
+  margin-right: 50px;
+  position: absolute;
+  left: 100px;
+}
+
+#HPringIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#HPringIns .weapon{
+  margin-left: 335px;
+  margin-bottom: 60px;
+}
+
+#HPringIns .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#HPringIns .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#HPringIns p{
+  color: #94a535;
+}
+
+#HPringIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#HPringIns p2{
+  color: #94a535;
+  font-size: 12px;
+}
+
+#HPringIns p3{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#HPringIns p4{
+ color: #94a535;
+}
+
+#HPringIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#HPringIns p6{
+  color: #94a535;
+}
+
+#HPringIns p7{
+  color: #acaca3;
+}
+
+#HPringIns p8{
+  color: #ffffff;
+}
+
+#HPringIns p9{
+  color: #ffffff;
+}
+
+#HPringIns #HPring{
+  margin-top: 120px;
+  height: 180px;
+  margin-right: 50px;
+  position: absolute;
+  left: 100px;
+}
+
+#armorIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#armorIns .weapon{
+  margin-left: 335px;
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+#armorIns .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#armorIns .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#armorIns p{
+  color: #94a535;
+}
+
+#armorIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#armorIns p2{
+  color: #94a535;
+  font-size: 11px;
+}
+
+#armorIns p3{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#armorIns p4{
+ color: #94a535;
+}
+
+#armorIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#armorIns p6{
+  color: #94a535;
+}
+
+#armorIns p7{
+  color: #acaca3;
+  margin-bottom: 15px;
+}
+
+#armorIns p8{
+  color: #ffffff;
+}
+
+#armorIns p9{
+  color: #ffffff;
+}
+
+#armorIns p10{
+  color: #94a535;
+}
+
+#armorIns p11{
+  color: #ffffff;
+}
+
+#armorIns #armor{
+  margin-top: 120px;
+  height: 180px;
+  margin-right: 50px;
+  position: absolute;
+  left: 100px;
+}
+
+#greatSwordIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#greatSwordIns .weapon{
+  margin-left: 85px;
+  font-size: 12px;
+  margin-bottom: 90px;
+}
+
+#greatSwordIns .description{
+  font-size: 11px;
+  width: 35%;
+  font-size: 11px;
+  position: absolute;
+  left: 430px;
+  top: 310px;
+}
+
+#greatSwordIns .text{
+  display: grid;
+  margin-left: 25px;
+}
+
+#greatSwordIns p{
+  color: #94a535;
+}
+
+#greatSwordIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#greatSwordIns p2{
+ color: #94a535;
+}
+
+#greatSwordIns p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#greatSwordIns p4{
+ color: #94a535;
+}
+
+#greatSwordIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#greatSwordIns p6{
+  color: #94a535;
+}
+
+#greatSwordIns p7{
+  color: #acaca3;
+}
+
+#greatSwordIns p8{
+  color: #ffffff;
+}
+
+#greatSwordIns p9{
+  color: #ffffff;
+}
+
+img#greatS{
+  margin-top: 30px;
+  margin-right: 10px;
+  height: 350px;
+}
+
+#swordOfDjallIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#swordOfDjallIns .weapon{
+  margin-left: 333px;
+}
+
+#swordOfDjallIns  .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#swordOfDjallIns  .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#swordOfDjallIns p{
+  color: #94a535;
+}
+
+#swordOfDjallIns  p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#swordOfDjallIns  p2{
+ color: #94a535;
+}
+
+#swordOfDjallIns  p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#swordOfDjallIns  p4{
+ color: #94a535;
+}
+
+#swordOfDjallIns  p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#swordOfDjallIns  p6{
+  color: #94a535;
+}
+
+#swordOfDjallIns  p7{
+  color: #acaca3;
+}
+
+#swordOfDjallIns  p8{
+  color: #ffffff;
+}
+
+#swordOfDjallIns  #swordOfDjallIn{
+  margin-top: 120px;
+  height: 200px;
+  margin-right: 50px;
+  position: absolute;
+  left: 100px;
+}
+
+#swordOfDjallIns  p9{
+  color: #ffffff;
+}
+
+#HoarderRingIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#HoarderRingIns .weapon{
+  margin-left: 333px;
+  font-size: 12px;
+}
+
+#HoarderRingIns  .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#HoarderRingIns  .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#HoarderRingIns p{
+  color: #94a535;
+}
+
+#HoarderRingIns  p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#HoarderRingIns  p2{
+ color: #94a535;
+}
+
+#HoarderRingIns  p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#HoarderRingIns  p4{
+ color: #94a535;
+}
+
+#HoarderRingIns  p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#HoarderRingIns  p6{
+  color: #94a535;
+}
+
+#HoarderRingIns  p7{
+  color: #acaca3;
+}
+
+#HoarderRingIns  p8{
+  color: #ffffff;
+}
+
+#HoarderRingIns  #HoarderRing{
+  margin-top: 120px;
+  height: 200px;
+  margin-right: 50px;
+  position: absolute;
+  left: 65px;
+}
+
+#HoarderRingIns  p9{
+  color: #ffffff;
+}
+
+#infiniteArmorIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#infiniteArmorIns .weapon{
+  margin-left: 335px;
+  font-size: 12px;
+  margin-bottom: 40px;
+}
+
+#infiniteArmorIns .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#infiniteArmorIns .text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#infiniteArmorIns p{
+  color: #94a535;
+}
+
+#infiniteArmorIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#infiniteArmorIns p2{
+  color: #94a535;
+  font-size: 11px;
+}
+
+#infiniteArmorIns p3{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#infiniteArmorIns p4{
+ color: #94a535;
+}
+
+#infiniteArmorIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#infiniteArmorIns p6{
+  color: #94a535;
+}
+
+#infiniteArmorIns p7{
+  color: #acaca3;
+  margin-bottom: 15px;
+}
+
+#infiniteArmorIns p8{
+  color: #ffffff;
+}
+
+#infiniteArmorIns p9{
+  color: #ffffff;
+}
+
+#infiniteArmorIns p10{
+  color: #94a535;
+}
+
+#infiniteArmorIns p11{
+  color: #ffffff;
+}
+
+#infiniteArmorIns #infiniteArmorIn{
+  margin-top: 120px;
+  height: 180px;
+  margin-right: 50px;
+  position: absolute;
+  left: 100px;
+}
+
+#eternalRingIns{
+  background-color: rgb(26, 25, 25);
+  border-radius: 25px;
+  width: 700px;
+  height: 460px;
+  display: flex;
+  font-family: pixelated;
+  z-index: -999;
+  background-image: url(/images/fd-removebg-preview.png);
+  /* background-repeat: no-repeat; */
+  background-size: 50%;
+}
+
+#eternalRingIns .weapon{
+  margin-left: 390px;
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+#eternalRingIns  .description{
+  font-size: 11px;
+  width: 35%;
+  position: absolute;
+  left: 425px;
+  top: 350px;
+}
+
+#eternalRingIns.text{
+  display: grid;
+  margin-left: 55px;
+  font-size: 13px;
+}
+
+#eternalRingIns p{
+  color: #94a535;
+}
+
+#eternalRingIns p1{
+  color: #acaca3;
+  margin-bottom:  25px;
+}
+
+#eternalRingIns  p2{
+ color: #94a535;
+}
+
+#eternalRingIns p3{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#eternalRingIns p4{
+ color: #94a535;
+}
+
+#eternalRingIns p5{
+ color: #acaca3;
+ margin-bottom:  25px;
+}
+
+#eternalRingIns p6{
+  color: #94a535;
+}
+
+#eternalRingIns p7{
+  color: #acaca3;
+}
+
+#eternalRingIns p8{
+  color: #ffffff;
+}
+
+#eternalRingIns #eternalRing{
+  margin-top: 120px;
+  height: 200px;
+  margin-right: 50px;
+  position: absolute;
+  left: 90px;
+}
+
+#eternalRingIns p9{
+  color: #ffffff;
+}
+
+#HeroStats h{
+padding: 20px;
+position: absolute;
+top: 40px;
+left: 150px;
+font-family: pixelated;
+color: #030303;
+font-size: 25px;
+border-bottom: SOLID #050505;
+}
+
+.stats{
+   margin-left: 150px;
+   display: grid;
+   margin-top: 100px;
+   text-align: left;
+   font-family: pixelated;
+color: #0e0d0d;
+height: 400px;
+justify-content: center;
+width: 100px;
+}
+
+.stats p1{
+  padding: 20px;
+  margin-left: 10px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-family: pixelated;
+color: #0e0d0d;
+}
+
+.stats p{
+  padding: 20px;
+  font-size: 18px;
+  font-family: pixelated;
+color: #eb1212;
+margin-left: 10px;
+}
+
+.stats p2{
+  padding: 20px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-family: pixelated;
+color: #0e0d0d;
+margin-left: 10px;
+}
+
+.stats p3{
+  padding: 20px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-family: pixelated;
+color: #0e0d0d;
+margin-left: 10px;
+}
+
+.stats p4{
+  padding: 20px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-family: pixelated;
+color: #0e0d0d;
+margin-left: 10px;
+}
+
+.stats p5{
+  padding: 20px;
+  font-size: 15px;
+  white-space: nowrap;
+  font-family: pixelated;
+color: #0e0d0d;
+margin-left: 10px;
+}
+
+/* FIGHT and RUN WITH SKELETON*/
+
+#lootSkelFight{
+   height: 300px;
+   width: 500px;
+   background-color: rgb(255, 250, 250);
+   font-family: pixelated;
+   text-align: center;
+   background-image: url(/images/background_loot.jpg);
+   background-size: 120%;
+   color: #fff;
+   background-repeat: no-repeat;
+}
+
+#lootSkelFight h{
+   padding: 30px;
+}
+
+#loot{
+   display: flex;
+   height: 160px;
+   margin-top: 40px;
+   align-items: center;
+   justify-content: center;
+   border-top: solid #ffffff;
+   border-bottom: solid #ffffff;
+   margin-bottom: 30px;
+}
+
+#lootSkelFight .healthPotion{
+   background-image: url(/images/health-removebg-preview.png);
+   background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100px;
+      width: 130px;
+      height: 130px;
+}
+
+#lootSkelFight .skeletonMace{
+   background-image: url(/images/mace.png);
+   background-repeat: no-repeat;
+      background-position: center;
+      background-size: 160px;
+      width: 130px;
+      height: 130px;
+}
+
+#lootAris .dagger{
+   background-image: url(/images/dagger-removebg-preview.png);
+   background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100px;
+      width: 130px;
+      height: 130px;
+}
+
+#lootAris .ring{
+   background-image: url(/images/ring-removebg-preview\ \(1\).png);
+   background-repeat: no-repeat;
+      background-position: center;
+      background-size: 90px;
+      width: 130px;
+      height: 130px;
+}
+
+.skeleton{
+   background-image: url(/images/skeleton-removebg-preview.png);
+   background-size: 150px;
+  background-position: center;
+  position: absolute;
+  left: 170px;
+  top: 85px;
+  height: 300px;
+  width: 300px;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#s{
+display: block;
+}
+
+.Aris{
+   background-image: url(/images/Aris.png);
+   background-size: 110px;
+  background-position: center;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#A{
+   display: block;
+}
+
+.Aris h{
+   font-family: pixelated;
+   color: #fff;
+   white-space: nowrap;
+   top: 85px;
+   right: 123px;
+   position: absolute;
+}
+
+h:hover{
+   cursor: pointer;
+}
+
+.skeleton h{
+   font-family: pixelated;
+   color: #fff;
+   white-space: nowrap;
+   top: 80px;
+   right: 90px;
+   position: absolute;
+}
+
+#skeletonFight{
+   background-color: rgb(22, 22, 22);
+   width: 800px;
+   height: 430px;
+   background-image: url(/images/dungeon\ background\ 7.png);
+   background-size: 100%;
+}
+
+#skeletonFight p {
+   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   position: relative;
+   margin-top: 20px;
+   color: #ffffff;
+   font-size: 12px;
+   letter-spacing: .02em; /* Adjust as needed */
+   font-family: Pixelated;
+   animation: 
+     typing 3.5s steps(40, end), 
+     blink-caret .75s step-end infinite,
+     afterTyping 3.5s steps(40, end);
+ }
+
+ #skeletonFight p1{
+   color: #ffffff;
+   font-family: Pixelated;
+   position: relative;
+   white-space: nowrap; /* Keeps the content on a single line */
+   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+ }
+
+ #skeletonFight p1{
+   color: #fff;
+   font-family: Pixelated;
+   position: relative;
+   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+ }
+
+ #skeletonFight img{
+   position: absolute;
+   border-radius: 4px;
+   left: 500px;
+   padding: 5px;
+   width: 100px;
+ }
+
+ #SkelFight{
+   border:solid #080808;
+   background: #050505;
+   position: absolute;
+   left: 50%;
+   margin-left: -400px;
+   top: 50%;
+   margin-top: -300px;
+   z-index: 4;
+   width: 900px;
+   height: 700px;
+   text-align: center;
+   display: none;
+   background-image: url(/images/dungeon\ background\ 7.png);
+   background-size: 120%;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+ #SkelFight .difficulty{
+   display: grid;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+   margin-top: 60px;
+ }
+
+ .difficulty #dice{
+   justify-self: center;
+   height: 250px;
+   width: 250px;
+   border: solid #2c3c96;
+   border-width: 8px;
+   border-radius: 15px;
+ }
+
+ .difficulty #knight{
+   height: 200px;
+   position: absolute;
+   left: 30px;
+ }
+
+ .difficulty h{
+   margin-bottom: 20px;
+   margin-top: -20px;
+ }
+
+ .difficulty #HeroHP{
+   font-family: pixelated;
+   color: #f50a0a;
+   position: absolute;
+   left: 60px;
+   bottom: 290px;
+ }
+
+ .difficulty #npcHP{
+   font-family: pixelated;
+   color: #f50a0a;
+   position: absolute;
+   right: 100px;
+   bottom: 290px;
+ }
+
+ .difficulty #npc{
+   height: 220px;
+   width: 200px;
+   position: absolute;
+   left: 620px;
+ }
+
+ .difficulty #diceAnimated{
+   justify-self: center;
+   display: none;
+   height: 250px;
+   width: 250px;
+   border: solid #2c3c96;
+   border-width: 8px;
+   border-radius: 15px;
+ }
+
+ .Result{
+   text-align: center;
+   align-content: center;
+   justify-content: center;
+ }
+
+ #info{
+   font-family: pixelated;
+   color: #ffffff;
+   font-size: 17px;
+   margin-top: 50px;
+ }
+
+ #armorInfo{
+   font-family: pixelated;
+   color: #fff;
+   font-size: 17px;
+   margin-top: 50px;
+ }
+
+ .Result #SuccessOrFail{
+   font-family: pixelated;
+   margin-top: 30px;
+ }
+
+ #Reroll{
+   font-family: pixelated;
+   display: grid;
+   color: #ffffff;;
+ }
+
+ #SkelFight h{
+   padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+ }
+
+
+ /* DIAL AND FIGHT WITH BLIGHT DEMON */
+
+ #BlightDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/dungeon\ background\ 7.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+ 
+ /* The typing effect */
+
+ @keyframes afterTyping {
+   from { width: 0% }
+   to { width: 80% }
+ }
+
+ #BlightDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+@keyframes afterTypingBlight {
+  from { width: 0% }
+  to { width: 65% }
+}
+
+#blightDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+img#blight{
+  padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding-top: 8px;
+   height: 170px;
+   width: 140px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #b19829;
+}
+
+#blightH{
+  font-family: pixelated;
+   color: rgb(122, 126, 126);
+   margin-left: 610px;
+   font-size: 13px;
+}
+
+#heroChoiceBlight{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceBlight:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceBlight1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceBlight1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceBlight2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceBlight2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceBlight_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceBlight_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#BlightDemonFight{
+  border:solid #080808;
+  background: #050505;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -300px;
+  z-index: 4;
+  width: 900px;
+  height: 700px;
+  text-align: center;
+  display: none;
+  background-image: url(/images/dungeon\ background\ 7.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#BlightDemonFight .BlightDiff{
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.Blightdiff h{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.BlightDiff #knight{
+  height: 200px;
+  position: absolute;
+  left: 30px;
+}
+
+.BlightDiff #HeroHPBlight{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  left: 60px;
+  bottom: 290px;
+}
+
+.BlightDiff #npcHPBlight{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  right: 100px;
+  bottom: 290px;
+}
+
+.BlightDiff #npc{
+  height: 220px;
+  width: 200px;
+  position: absolute;
+  left: 620px;
+}
+
+.BlightDiff #diceBlight{
+  justify-self: center;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.BlightDiff #diceAnimatedBlight{
+  justify-self: center;
+  display: none;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+#BlightDemonFight h{
+  padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+}
+
+.ResultBlight{
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.ResultBlight #infoB{
+  font-family: pixelated;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultBlight #armorInfoB{
+  font-family: pixelated;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultBlight #SuccessOrFailB{
+  font-family: pixelated;
+  margin-top: 30px;
+}
+
+.ResultBlight #RerollB{
+  font-family: pixelated;
+  display: grid;
+  color: #ffffff;;
+}
+
+#lootBlightFight{
+  height: 300px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  text-align: center;
+  background-image: url(/images/background_loot.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+#lootBlightFight h{
+  padding: 30px;
+}
+
+#lootblightFight .healthPotion{
+  background-image: url(/images/health-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+#lootblightFight .ringOfHealth{
+  background-image: url(/images/ringBlight-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 160px;
+     width: 130px;
+     height: 130px;
+}
+
+#lootblightFight .armorOfHealth{
+  background-image: url(/images/armor.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+.BlightDemonModel{
+  background-image: url(/images/blightDemon-removebg-preview.png);
+   background-size: 110px;
+  background-position: center;
+  position: absolute;
+  height: 300px;
+  width: 300px;
+  color: #abaca7;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#B{
+  display: block;
+}
+
+.BlightDemonModel h{
+  font-family: pixelated;
+  color: #fff;
+  white-space: nowrap;
+  top: 80px;
+  right: 63px;
+  position: absolute;
+}
+
+/* TERRA DIALOG AND FIGHT */
+#TerraDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/dungeon\ background\ 9.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#TerraDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+#TerraDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+#terra{
+   background-position: center;
+   background-repeat: no-repeat;
+   padding-top: 8px;
+   height: 170px;
+   width: 180px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #383836;
+}
+
+#TerraH{
+  font-family: pixelated;
+   color: rgb(217, 231, 21);
+   margin-left: 590px;
+   font-size: 17px;
+}
+
+#heroChoiceTerra{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceTerra_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra_2{
+  text-align: center;
+  display: none;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra_3{
+  text-align: center;
+  display: none;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra_3:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra_1_1{
+  text-align: center;
+  display: none;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra_1_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceTerra_1_2{
+  text-align: center;
+  display: none;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceTerra_1_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#TerraFight{
+  border:solid #080808;
+  background: #050505;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -300px;
+  z-index: 4;
+  width: 900px;
+  height: 700px;
+  text-align: center;
+  display: none;
+  background-image: url(/images/dungeon\ background\ 9.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#TerraFight .TerraDiff{
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.TerraDiff h{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.TerraDiff #knight{
+  height: 200px;
+  position: absolute;
+  left: 30px;
+}
+
+.TerraDiff #HeroHPTerra{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  left: 60px;
+  bottom: 290px;
+}
+
+.TerraDiff #npcHPTerra{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  right: 100px;
+  bottom: 290px;
+}
+
+.TerraDiff #npc{
+  height: 230px;
+  width: 240px;
+  position: absolute;
+  left: 600px;
+  top: 122px;
+}
+
+.TerraDiff #diceAnimatedTerra{
+  justify-self: center;
+  display: none;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.TerraDiff #diceTerra{
+  justify-self: center;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+#TerraFight h{
+  padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+}
+
+.ResultTerra{
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.ResultTerra #infoT{
+  font-family: pixelated;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultTerra #armorInfoT{
+  font-family: pixelated;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultTerra #SuccessOrFailT{
+  font-family: pixelated;
+  margin-top: 30px;
+}
+
+.ResultTerra #RerollT{
+  font-family: pixelated;
+  display: grid;
+  color: #ffffff;;
+}
+
+#lootTerraFight{
+  height: 300px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  text-align: center;
+  background-image: url(/images/DungeonBack.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+#lootTerraFight h{
+  padding: 30px;
+}
+
+#lootTerraFight .healthPotion{
+  background-image: url(/images/health-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+#lootTerraFight .greatSword{
+  background-image: url(/images/greatsword-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100%;
+     width: 150px;
+     height: 160px;
+}
+
+.TerraModel{
+  background-image: url(/images/TerraModel.png);
+   background-size: 110px;
+  background-position: center;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  right: 30px;
+  top: 130px;
+  color: #abaca7;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#t{
+  display: block;
+}
+
+.TerraModel h{
+  font-family: pixelated;
+  color: #fff;
+  white-space: nowrap;
+  top: 30px;
+  right: 63px;
+  position: absolute;
+}
+
+/* SPIDER DIAL AND FIGHT */
+#SpiderDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/backgroundWeb.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#SpiderDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+#SpiderDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+img#spider{
+  padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding-top: 8px;
+   height: 130px;
+   width: 160px;
+   position: relative;
+   text-align: center;
+   float: right;
+   border-left:solid #7a6624;
+}
+
+#spiderH{
+  font-family: pixelated;
+   color: rgb(214, 218, 218);
+   margin-left: 610px;
+   font-size: 18px;
+}
+
+#heroChoiceSpider{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceSpider:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceSpider1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceSpider1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceSpider_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceSpider_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#SpiderFight{
+  border:solid #080808;
+  background: #050505;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -300px;
+  z-index: 4;
+  width: 900px;
+  height: 700px;
+  text-align: center;
+  display: none;
+  background-image: url(/images/backgroundWeb.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#SpiderFight .SpiderDiff{
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.Spiderdiff h{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.SpiderDiff #knight{
+  height: 200px;
+  position: absolute;
+  left: 30px;
+}
+
+.SpiderDiff #HeroHPSpider{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  left: 60px;
+  bottom: 290px;
+}
+
+.SpiderDiff #npcHPSpider{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  right: 100px;
+  bottom: 290px;
+}
+
+.SpiderDiff #npc{
+  height: 200px;
+  width: 210px;
+  position: absolute;
+  left: 600px;
+  top: 152px;
+}
+
+.SpiderDiff #diceAnimatedSpider{
+  justify-self: center;
+  display: none;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.SpiderDiff #diceSpider{
+  justify-self: center;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+#SpiderFight h{
+  padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+}
+
+.ResultSpider{
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.ResultSpider #infoS{
+  font-family: pixelated;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultSpider #armorInfoS{
+  font-family: pixelated;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultSpider #SuccessOrFailS{
+  font-family: pixelated;
+  margin-top: 30px;
+}
+
+.ResultSpider #RerollS{
+  font-family: pixelated;
+  display: grid;
+  color: #ffffff;;
+}
+
+#lootSpiderFight{
+  height: 300px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  text-align: center;
+  background-image: url(/images/bacgkroundWEBloot.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+#lootSpiderFight h{
+  padding: 30px;
+}
+
+#lootSpiderFight .healthPotion{
+  background-image: url(/images/health-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+.SpiderModel{
+  background-image: url(/images/spidermodel-removebg-preview.png);
+   background-size: 110px;
+  background-position: center;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  right: -20px;
+  top: 80px;
+  color: #abaca7;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#sp{
+  display: block;
+}
+
+.SpiderModel h{
+  font-family: pixelated;
+  color: #fff;
+  white-space: nowrap;
+  top: 30px;
+  right: 63px;
+  position: absolute;
+}
+
+/* HOARDER DIAL */
+#HoarderDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/hoarderBackground.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#HoarderDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+#HoarderDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+img#hoarder{
+  padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding-top: 8px;
+   height: 220px;
+   width: 120px;
+   right: 20px;
+   top: -10px;
+   position: relative;
+   text-align: center;
+   float: right;
+}
+
+#hoarderH{
+  font-family: pixelated;
+   color: rgb(214, 218, 218);
+   margin-left: 610px;
+   font-size: 18px;
+}
+
+#heroChoiceHoarder{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceHoarder:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarder_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarder_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder_1_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarder_1_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder_1_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarder_1_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder_1_3{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarder_1_3:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer3{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer3:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer4{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer4:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceHoarder1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceHoarderleave{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoiceHoarderleave:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer2_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer2_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer2_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer2_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer3_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer3_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer3_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer3_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer3_3{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer3_3:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer4_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer4_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoiceAnswer4_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoiceAnswer4_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+.HoarderModel{
+  background-image: url(/images/image_transparent_Craiyon.png);
+   background-size: 100px;
+  background-position: center;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  right: -20px;
+  top: 80px;
+  color: #abaca7;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#h{
+  display: block;
+}
+
+.HoarderModel h{
+  font-family: pixelated;
+  color: #fff;
+  white-space: nowrap;
+  top: 30px;
+  right: 50px;
+  position: absolute;
+}
+
+ /*Style the main avatar- winning effect*/
+ #main_viewport.win::before{
+   background-color: purple;
+}
+
+/*TARNISHED DIAL */
+#TarnishedDial{
+  background-color: rgb(22, 22, 22);
+  width: 800px;
+  height: 430px;
+  background-image: url(/images/dungeon\ background\ 4.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+#TarnishedDial p {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  position: relative;
+  top: 70px;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: .02em; /* Adjust as needed */
+  font-family: Pixelated;
+  animation: 
+    typing 3.5s steps(40, end), 
+    blink-caret .75s step-end infinite,
+    afterTypingBlight 3.5s steps(40, end);
+}
+
+#TarnishedDial #npc{
+  display: inline-block;
+   height: 180px;
+   padding: 20px;
+   width: 760px;
+}
+
+img#tarnished{
+  padding-left: 20px;
+   background-position: center;
+   background-repeat: no-repeat;
+   padding-top: 8px;
+   right: -30px;
+   height: 160px;
+   width: 230px;
+   position: relative;
+   text-align: center;
+   float: right;
+}
+
+#tarnishedH{
+  font-family: pixelated;
+   color: rgb(214, 218, 218);
+   margin-left: 610px;
+   font-size: 18px;
+}
+
+#heroChoicetarnished{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoicetarnished:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoicetarnished1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+}
+
+#heroChoicetarnished1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoicetarnished_1{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoicetarnished_1:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoicetarnished_2{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoicetarnished_2:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoicetarnished_3{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoicetarnished_3:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#heroChoicetarnished_4{
+  text-align: center;
+  padding: 5;
+  font-size:  15px;
+  display: none;
+}
+
+#heroChoicetarnished_4:hover{
+  text-align: center;
+  display: grid;
+  cursor: pointer;
+  font-size:  20px;
+}
+
+#TarnishedFight{
+  border:solid #080808;
+  background: #050505;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  top: 50%;
+  margin-top: -300px;
+  z-index: 4;
+  width: 900px;
+  height: 700px;
+  text-align: center;
+  display: none;
+  background-image: url(/images/dungeon\ background\ 4.png);
+  background-size: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#TarnishedFight .TarnishedDiff{
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.TarnishedDiff h{
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.TarnishedDiff #knight{
+  height: 200px;
+  bottom: 320px;
+  position: absolute;
+  left: 30px;
+}
+
+.TarnishedDiff #HeroHPTarnished{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  left: 60px;
+  bottom: 260px;
+}
+
+.TarnishedDiff #npcHPTarnished{
+  font-family: pixelated;
+  color: #f50a0a;
+  position: absolute;
+  right: 90px;
+  bottom: 260px;
+}
+
+.TarnishedDiff #npc{
+  height: 250px;
+  width: 270px;
+  position: absolute;
+  left: 600px;
+  top: 152px;
+}
+
+.TarnishedDiff #diceAnimatedTarnished{
+  justify-self: center;
+  display: none;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+.TarnishedDiff #diceTarnished{
+  justify-self: center;
+  height: 250px;
+  width: 250px;
+  border: solid #2c3c96;
+  border-width: 8px;
+  border-radius: 15px;
+}
+
+#TarnishedFight h{
+  padding: 20px;
+position: relative;
+top: 20px;
+font-family: pixelated;
+color: #ffffff;
+font-size: 25px;
+}
+
+.ResultTarnished #infoTar{
+  font-family: pixelated;
+  color: #ffffff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultTarnished #armorInfoTar{
+  font-family: pixelated;
+  color: #fff;
+  font-size: 17px;
+  margin-top: 50px;
+}
+
+.ResultTarnished #SuccessOrFailTar{
+  font-family: pixelated;
+  margin-top: 30px;
+}
+
+.ResultTarnished #RerollTar{
+  font-family: pixelated;
+  display: grid;
+  color: #ffffff;;
+}
+
+#lootTarnishedFight{
+  height: 300px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  text-align: center;
+  background-image: url(/images/bacgkroundWEBloot.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+#lootTarnishedFight h{
+  padding: 30px;
+}
+
+#lootTarnishedFight .eternalRing{
+  background-image: url(/images/EternalRing-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+#lootTarnishedFight .healthPotion{
+  background-image: url(/images/health-removebg-preview.png);
+  background-repeat: no-repeat;
+     background-position: center;
+     background-size: 100px;
+     width: 130px;
+     height: 130px;
+}
+
+.TarnishedModel{
+  background-image: url(/images/TarnishedModel-removebg-preview.png);
+   background-size: 100px;
+  background-position: center;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  right: -20px;
+  top: 80px;
+  color: #abaca7;
+  z-index: 3;
+  background-repeat: no-repeat;
+}
+
+#tar{
+  display: block;
+}
+
+.TarnishedModel h{
+  font-family: pixelated;
+  color: #fff;
+  white-space: nowrap;
+  top: 40px;
+  right: 30px;
+  position: absolute;
+}
+  
+ /*Style all the pathways*/
+ .start, .nextStep, .image_part_007, .pic3, .image_part_032, .image_part_047,
+ .image_part_092, .image_part_107,.image_part_122, .image_part_149, .image_part_002,.image_part_003,.image_part_004,.image_part_005, .image_part_006, .image_part_008, .image_part_023, .image_part_024, .image_part_039,.image_part_165, .image_part_180, .image_part_195, .image_part_210, .image_part_225, .image_part_224, .image_part_223, .image_part_208, .image_part_207, .image_part_221, .image_part_222, .end{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: relative;
+ }
+ .start{
+    background-image: url(/mazepic/start.jpg);
+    
+ }
+ .nextStep{
+   background-image: url(/mazepic/nextStep.jpg);
+   
+}
+.image_part_007{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_007.jpg)
+}
+.pic3{
+   background-image: url(/mazepic/rightWayFromStart/pic3.jpg);
+}
+.image_part_032{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_032.jpg)
+}
+.image_part_047{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_047.jpg)
+}
+.image_part_092{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_092.jpg)
+}
+.image_part_107{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_107.jpg)
+}
+.image_part_122{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_122.jpg)
+}
+.image_part_149{
+   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_149.jpg)
+}
+.image_part_002{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_002.jpg)
+}
+.image_part_003{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_003.jpg)
+}
+.image_part_004{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_004.jpg)
+}
+.image_part_005{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_005.jpg)
+}
+.image_part_006{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_006.jpg)
+}
+.image_part_008{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_008.jpg)
+}
+.image_part_023{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_023.jpg)
+}
+.image_part_024{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_024.jpg)
+}
+.image_part_039{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_039.jpg)
+}
+.image_part_165{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_165.jpg)
+}
+.image_part_180{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_180.jpg)
+}
+.image_part_195{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_195.jpg)
+}
+.image_part_207{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_207.jpg)
+}
+.image_part_208{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_208.jpg)
+}
+.image_part_210{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_210.jpg)
+}
+.image_part_221{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_221.jpg)
+}
+.image_part_222{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_222.jpg)
+}
+.image_part_223{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_223.jpg)
+}
+.image_part_224{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_224.jpg)
+}
+.image_part_225{
+   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_225.jpg)
+}
+
+.popup {
+   position: absolute;
+   display: inline-block;
+   cursor: pointer;
+ }
+ 
+ /* The actual popup (appears on top) */
+ .popup .popuptext {
+   visibility: hidden;
+   width: 660px;
+   background-color: #555;
+   color: #fff;
+   text-align: center;
+   border-radius: 160px;
+   padding: 0px 0px;
+   position: absolute;
+   z-index: 1;
+   bottom: 25%;
+   left: 100%;
+   margin-left: -80px;
+ }
+ /* Toggle this class when clicking on the popup container (hide and show the popup) */
+ .popup .show {
+   visibility: visible;
+   -webkit-animation: fadeIn 1s;
+   animation: fadeIn 1s
+ }
+ 
+ /* Add animation (fade in the popup) */
+ @-webkit-keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+   from {opacity: 0;}
+   to {opacity:1 ;}
+ }
+
+ #intro{
+  height: 630px;
+  width: 1000px;
+  background-color: rgb(3, 3, 3);
+ font-size: 22px;
+  text-align: center;
+  background-image: url(/images/guillaume-lucbert-env2-dungeon.jpg);
+  background-size: 127%;
+  background-position: center;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+#Eng{
+  font-size: 25px;
+  margin-top: 30px;
+  display: block;
+  margin-bottom: 0px;
+}
+
+#rules{
+  text-align: left;
+  display: grid
+}
+
+#rules p{
+  margin-bottom: 5px;
+}
+
+#rules p1{
+  margin-bottom: 5px;
+}
+
+#rules p2{
+  margin-bottom: 5px;
+}
+
+#keybindsRu{
+  text-align: left;
+  margin-top: 30px;
+  display: none;
+}
+
+#keybindsRu h{
+  margin-left: 440px;
+  font-weight: bold;
+}
+
+#keybindsRu p{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#keybindsRu p1{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#keybindsRu p2{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#keybinds{
+  text-align: left;
+  margin-top: 30px;
+  display: grid
+}
+
+#keybinds h{
+  margin-left: 450px;
+  font-weight: bold;
+}
+
+#keybinds p{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#keybinds p1{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#keybinds p2{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#last {
+  float: right;
+  position: absolute;
+ left: 810px;
+ bottom: 30px;
+  display: block;
+}
+
+#lastEng {
+  float: right;
+  position: absolute;
+ left: 850px;
+ bottom: 30px;
+  display: none;
+}
+
+#rulesRu{
+  text-align: left;
+  display: none;
+}
+
+#rulesRu p{
+  margin-bottom: 5px;
+}
+
+#rulesRu p1{
+  margin-bottom: 5px;
+}
+
+#rulesRu p2{
+  margin-bottom: 5px;
+}
+
+#Ru{
+  font-size: 25px;
+  margin-top: 30px;
+  display: none;
+  margin-bottom: 0px;
+}
+
+#leaveIntro{
+  position: absolute;
+  bottom: 40px;
+  border-bottom: solid #121213;
+  border-width: 5px;
+  left: 400px;
+  display: block;
+}
+
+#leaveIntroRu{
+  position: absolute;
+  bottom: 35px;
+  border-bottom: solid #121213;
+  border-width: 5px;
+  left: 460px;
+  display: none;
+}
+
+#GameOver{
+  height: 400px;
+  width: 500px;
+  background-color: rgb(255, 250, 250);
+  font-family: pixelated;
+  background-position: center;
+  font-size: 30px;
+  text-align: center;
+  background-image: url(/images/110357366-halloween-day-and-graves-graveyard-space-for-text-vector.jpg);
+  background-size: 120%;
+  color: #fff;
+  background-repeat: no-repeat;
+}
+
+.dead{
+  margin-top: 130px;
+}
+
+.buttonLeave{
+ margin-top: 50px;
+}
