@@ -21,12 +21,11 @@ document.getElementById("MusicDjall").pause()
 document.getElementById("Music").pause()
 document.getElementById("MusicSecond").pause()
 document.getElementById("yourDeath").pause()
-// document.getElementById("Music").play()
-// document.getElementById("MusicSecond").play()
+document.getElementById("Music").play()
 
-// setTimeout(function () {
-//   document.getElementById("MusicSecond").play()
-// }, 148000);
+setTimeout(function () {
+  document.getElementById("MusicSecond").play()
+}, 148000);
 
 function swapRu(){
   $(document.getElementById("rules")).toggle() 
@@ -122,13 +121,13 @@ const maze = [
 ];
 
 function attack(){
-   test.style.backgroundImage = "url(/mazepic/__Attack2NoMovement.gif)"
+   test.style.backgroundImage = "url(./mazepic/__Attack2NoMovement.gif)"
    test.style.backgroundSize = "250px"
    setTimeout(function () {
-      test.style.backgroundImage = "url(/mazepic/__Idle.gif)"
+      test.style.backgroundImage = "url(./mazepic/__Idle.gif)"
     }, 300);
 }
-$("#Aris").attr("src", "/images/DENeutral.png");
+$("#Aris").attr("src", "./images/DENeutral.png");
 document.getElementById("Aris").style.height = "185px"
 document.getElementById("Aris").style.width = "125px"
 
@@ -199,7 +198,7 @@ function ArisDialChoice2(){
     document.getElementById("heroChoiceAris2").remove()
     $(document.getElementById("heroChoiceAris1_1")).toggle() 
     $(document.getElementById("heroChoiceAris1_2")).toggle() 
-    $("#Aris").attr("src", "/images/DEAngry.png")
+    $("#Aris").attr("src", "./images/DEAngry.png")
 }
 
 function ArisDialChoice3(){
@@ -251,7 +250,7 @@ function ArisDialChoice1_1(){
     document.getElementById("heroChoiceAris1_2").remove()
     $(document.getElementById("heroChoiceAris1_1_1")).toggle() 
     $(document.getElementById("heroChoiceAris1_1_2")).toggle()
-    $("#Aris").attr("src", "/images/DENeutral.png")
+    $("#Aris").attr("src", "./images/DENeutral.png")
 }
 
 function ArisDialChoice1_2(){
@@ -282,7 +281,7 @@ function ArisDialChoice1_2(){
     document.getElementById("heroChoiceAris_2").remove()
     $(document.getElementById("heroChoiceAris1_1_1")).toggle() 
     $(document.getElementById("heroChoiceAris1_1_2")).toggle() 
-    $("#Aris").attr("src", "/images/DEAngry.png")
+    $("#Aris").attr("src", "./images/DEAngry.png")
 }
 
 function ArisDialChoice1_1_1(){
@@ -313,7 +312,7 @@ function ArisDialChoice1_1_1(){
     document.getElementById("heroChoiceAris1_1_2").remove()
     $(document.getElementById("heroChoiceAris1_1_1_1")).toggle() 
     $(document.getElementById("heroChoiceAris1_1_1_2")).toggle() 
-    $("#Aris").attr("src", "/images/DEHappy.png")
+    $("#Aris").attr("src", "./images/DEHappy.png")
 }
 
 function ArisDialChoice1_1_1_1(){
@@ -344,7 +343,7 @@ function ArisDialChoice1_1_1_1(){
     document.getElementById("heroChoiceAris1_1_1_2").remove()
     $(document.getElementById("heroChoiceAris1_1_1_1_1")).toggle() 
     $(document.getElementById("heroChoiceAris1_1_1_1_2")).toggle() 
-    $("#Aris").attr("src", "/images/DESad.png")
+    $("#Aris").attr("src", "./images/DESad.png")
 }
 
    function ArisDialChoice1_1_1_2(){
@@ -388,7 +387,7 @@ function ArisDialChoice1_1_1_1(){
        document.getElementById("heroChoiceAris1_1_1_2").remove()
        $(document.getElementById("heroChoiceAris1_1_1_1_1")).toggle() 
        $(document.getElementById("heroChoiceAris1_1_1_1_2")).toggle() 
-       $("#Aris").attr("src", "/images/DENeutral.png")
+       $("#Aris").attr("src", "./images/DENeutral.png")
    }
    
    function ArisDialChoice1_1_1_1_1(){
@@ -407,7 +406,7 @@ function ArisDialChoice1_1_1_1(){
        document.getElementById("heroChoiceAris1_1_1_1_2").remove()
        $(document.getElementById("heroChoiceArisFINAL")).toggle() 
        document.getElementById("lootAris").showModal()
-       $("#Aris").attr("src", "/images/DEShyBlush.png")
+       $("#Aris").attr("src", "./images/DEShyBlush.png")
       }
 
       //DIAL FOR BLIGHT DEMON
@@ -2802,7 +2801,7 @@ function leaveAris(){
 
 function justLeaveAris(){
    document.getElementById("dialog1").close()
-   $("#Aris").attr("src", "/images/DEAngry.png")
+   $("#Aris").attr("src", "./images/DEAngry.png")
    document.getElementById("arisDial").innerHTML = "You have no chances arrogant human!"
    $(document.getElementById("heroChoiceArisFINAL")).toggle() 
    document.getElementById("heroChoiceAris1_1_1_1_2").remove()

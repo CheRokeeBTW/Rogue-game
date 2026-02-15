@@ -1,0 +1,815 @@
+<html>
+<head>
+<title>Maze</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="MazeTest.css">
+</head>
+<body>
+  <dialog id = "Intro">
+    <h>Welcome to the dungeon game!</h>
+    <h1 id = "Eng">Rules:</h1>
+    <h2 id = "Ru">Правила</h2>
+    <div class id = "rules">
+      <p>1. This is a rogue-like maze game with some dnd features, but you need to find an escape from this maze</p>
+      <p1>2. You will meet different npc's on your way. Please click on them with left mouse in order to interact, if you will skip all dialogs and fights, then you will lose at the end.</p1>
+      <p2>3. In order to fight enemies you will have to press on dice. Every enemy will have difficulty level (for ex. "8" - it means that you need to score 8 or more on your dice roll). Your dice roll will be increased according to your gear like weapon, rings, armor and so on</p2>
+   <p3>4. This game supports only english language.</p3>
+    </div>
+    <div class id = "rulesRu">
+      <p>1. Эта игра в жанре рогалик, где нужно избежать из лабиринта с некоторыми чертами ДнД</p>
+      <p1>2. Вы будете встречать различных НПС на своем пути. Пожалуйста, нажимайте на них с помощью Лкм для взаимодействия, иначе, если вы пропустили диалоги и битвы с ними, то проиграете в конце</p1>
+      <p2>3. Во время сражения с противниками, вам будет необходимо нажать на кубик. Каждый оппонент будет иметь различный уровень сложности (напр. "8" - означает, что вам нужно выбить 8 или больше на вашем броске кубика). Ваше итоговое значение после броска будет увеличено согласно вашей экипировке (оружие, броня, кольца и т.д.) </p2>
+   <p3>4. Эта игра поддерживает только английский язык (несмотря на наличие обучения на русском).</p3>
+    </div>
+    <div class id = "keybinds">
+      <h>Keybinds:</h>
+      <p>CapsLock - open your hero sheet with all hero info like equipped weapon, your hp, armor and so on</p>
+      <p1>Tab - open your inventory (close it)</p1>
+      <p2>(In inventory) press left mouse on any item to inspect it and gain more info about it. Press ESC to close inspection window</p2>
+    <p3>Arrows (down, up, right, left) - to move around the maze</p3>
+    </div>
+    <div class id = "keybindsRu">
+      <h>Управление:</h>
+      <p>CapsLock - открыть меню с информацией о вашем персонаже: здоровье, экипированное оружие, броня, кольца и т.д.</p>
+      <p1>Tab - открыть ваш инвентарь(закрыть его)</p1>
+      <p2>(в инвентаре) нажмите Лкм на любой предмет, чтобы осмотреть его и получить больше информации о нем. Нажмите Esс, чтобы закрыть окно осмотра</p2>
+      <p3>Стрелки (вверх, вниз, вправо, влево) - для движения по лабиринту</p3>
+    </div>
+    <div class id = "last">
+      <h onclick = "swapRu()">Переключиться на РУ</h>
+    </div>
+    <div class id = "lastEng">
+      <h onclick = "swapEng()">Swap to English</h>
+    </div>
+    <div class id = "leaveIntro">
+      <h onclick = "leaveIntro()">Start playing the game</h>
+    </div>
+    <div class id = "leaveIntroRu">
+      <h onclick = "leaveIntro()">Начать играть</h>
+    </div>
+  </dialog>
+  <div id = "inventory">  <h></h>
+    <h>Inventory</h>
+    <h></h>
+    <h></h>
+  </div>
+  <dialog id = "GameOver">
+    <div class = "dead">
+    <h>You've died!</h>
+  </div>
+    <div class = "buttonLeave">
+      <h onclick = "tryAgain()">Try again</h>
+    </div>
+  </dialog>
+  <dialog id = "lootSkelFight">
+    <h>Nice victory! Take this loot</h>
+    <div class id = "loot">
+      <div class = "healthPotion"></div>
+      <div class = "skeletonMace"></div>
+    </div>
+    <div>
+      <h onclick = "leave()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "lootAris">
+    <h>Aris gave you this, better than nothing?</h>
+    <div class id = "loot">
+      <div class = "dagger"></div>
+      <div class = "ring"></div>
+    </div>
+    <div>
+      <h onclick = "leaveAris()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "lootBlightFight">
+    <h>Nice victory! Take this loot</h>
+    <div class id = "loot">
+      <div class = "healthPotion"></div>
+      <div class = "ringOfHealth"></div>
+      <div class = "armorOfHealth"></div>
+    </div>
+    <div>
+      <h onclick = "leaveBlightFight()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "lootTerraFight">
+    <h>Nice victory! Take this loot</h>
+    <div class id = "loot">
+      <div class = "healthPotion"></div>
+      <div class = "greatSword"></div>
+    </div>
+    <div>
+      <h onclick = "leaveTerraFight()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "lootSpiderFight">
+    <h>Nice victory! Take this loot</h>
+    <div class id = "loot">
+      <div class = "healthPotion"></div>
+      <div class = "healthPotion"></div>
+      <div class = "healthPotion"></div>
+    </div>
+    <div>
+      <h onclick = "leaveSpiderFight()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "lootTarnishedFight">
+    <h>Nice victory! Take this loot</h>
+    <div class id = "loot">
+      <div class = "eternalRing"></div>
+      <div class = "healthPotion"></div>
+    </div>
+    <div>
+      <h onclick = "leaveTarnishedFight()">Take it and leave</h>
+    </div>
+  </dialog>
+  <dialog id = "GameEnd">
+    <h>You slained the great Djall! You're the hero!</h>
+    <h1>You can refresh the game to start again</h1>
+    <h2>Thanks for playing!</h2>
+  </dialog>
+  <div id = "HeroStats"> 
+    <h>Stats</h>
+    <div class = "stats">
+      <p id ="health"></p>
+      <p1 id ="weaponType"></p1>
+      <p2 id ="armorType"></p2>
+      <p3 id ="ringType"></p3>
+      <p4 id ="armorProt"></p4>
+      <p5 id ="weaponDMG"></p5>
+    </div>
+  </div>
+  <div id = "SkelFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "difficulty">
+    <h>
+      Difficulty level: 9
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHP"></p>
+    <img id = "dice" onclick = "animateDice()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimated" onclick = "animateDice()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/skeletonDIAL.png">
+  <p id = "npcHP"></p>
+  </div>
+  <div class = "Result">
+    <h id = "result"></h>
+    <h3 id = "info"></h3>
+    <h4 id = "armorInfo"></h4>
+    <h1 id = "SuccessOrFail"></h1>
+    <h2 id = "Reroll"></h2>
+  </div>
+  </div>
+  <div id = "BlightDemonFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "BlightDiff">
+    <h>
+      Difficulty level: 12
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHPBlight"></p>
+    <img id = "diceBlight" onclick = "animateDiceBlight()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimatedBlight" onclick = "animateDiceBlight()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/blight-removebg-preview (1).png">
+  <p id = "npcHPBlight"></p>
+  </div>
+  <div class = "ResultBlight">
+    <h id = "resultB"></h>
+    <h3 id = "infoB"></h3>
+    <h4 id = "armorInfoB"></h4>
+    <h1 id = "SuccessOrFailB"></h1>
+    <h2 id = "RerollB"></h2>
+  </div>
+  </div>
+  <div id = "TerraFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "TerraDiff">
+    <h>
+      Difficulty level: 12
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHPTerra"></p>
+    <img id = "diceTerra" onclick = "animateDiceTerra()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimatedTerra" onclick = "animateDiceTerra()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/Terra-removebg-preview.png">
+  <p id = "npcHPTerra"></p>
+  </div>
+  <div class = "ResultTerra">
+    <h id = "resultT"></h>
+    <h3 id = "infoT"></h3>
+    <h4 id = "armorInfoT"></h4>
+    <h1 id = "SuccessOrFailT"></h1>
+    <h2 id = "RerollT"></h2>
+  </div>
+  </div>
+  <div id = "SpiderFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "SpiderDiff">
+    <h>
+      Difficulty level: 13
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHPSpider"></p>
+    <img id = "diceSpider" onclick = "animateDiceSpider()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimatedSpider" onclick = "animateDiceSpider()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/spider-removebg-preview.png">
+  <p id = "npcHPSpider"></p>
+  </div>
+  <div class = "ResultSpider">
+    <h id = "resultS"></h>
+    <h3 id = "infoS"></h3>
+    <h4 id = "armorInfoS"></h4>
+    <h1 id = "SuccessOrFailS"></h1>
+    <h2 id = "RerollS"></h2>
+  </div>
+  </div>
+  <div id = "TarnishedFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "TarnishedDiff">
+    <h>
+      Difficulty level: 14
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHPTarnished"></p>
+    <img id = "diceTarnished" onclick = "animateDiceTarnished()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimatedTarnished" onclick = "animateDiceTarnished()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/Tarnished-removebg-preview.png">
+  <p id = "npcHPTarnished"></p>
+  </div>
+  <div class = "ResultTarnished">
+    <h id = "resultTar"></h>
+    <h3 id = "infoTar"></h3>
+    <h4 id = "armorInfoTar"></h4>
+    <h1 id = "SuccessOrFailTar"></h1>
+    <h2 id = "RerollTar"></h2>
+  </div>
+  </div>
+  <div id = "DjallFight">
+    <div class ="header">
+    <h>
+      Roll the dice to win!
+    </h>
+  </div>
+  <div class = "DjallDiff">
+    <h>
+      Difficulty level: 14
+    </h>
+    <img id = "knight" src = "./images/KnightDIAL-removebg-preview.png">
+    <p id = "HeroHPDjall"></p>
+    <img id = "diceDjall" onclick = "animateDiceDjall()" src="./images/diceStatic-removebg-preview.png">  
+  <img id = "diceAnimatedDjall" onclick = "animateDiceDjall()" src = "./images/dices.gif">
+  <img id = "npc" src="./images/djalform-removebg-preview.png">
+  <p id = "npcHPDjall"></p>
+  </div>
+  <div class = "ResultDjall">
+    <h id = "resultD"></h>
+    <h3 id = "infoD"></h3>
+    <h4 id = "armorInfoD"></h4>
+    <h1 id = "SuccessOrFailD"></h1>
+    <h2 id = "RerollD"></h2>
+  </div>
+  </div>
+  <div class id = "wrap">
+  <div class id ="main_viewport">
+  <div class id = "maze_container">
+  </div>
+</div>
+<div class = "skeleton" id = "s" onclick = "isSkeletonFight()"><h>skeleton</h></div>
+<div class = "Aris" id = "A" onclick = "isArisDial()"><h>Aris</h></div>
+<div class = "BlightDemonModel" id = "b" onclick = "isblightDial()"><h>Blight Demon</h></div>
+<div class = "TerraModel" id = "t" onclick = "isTerraDial()"><h>Terra</h></div>
+<div class = "SpiderModel" id = "sp" onclick = "isSpiderDial()"><h>Ungol</h></div>
+<div class = "HoarderModel" id = "h" onclick = "isHoarderDial()"><h>Hoarder</h></div>
+<div class = "TarnishedModel" id = "tar" onclick = "isTarnishedDial()"><h>Tarnished</h></div>
+<dialog id = "skeletonFight">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h>Skeleton</h>
+    <img id ="npc" src="./images/skeletonDIAL.png" alt = "dnd">
+  </div>
+  <p id = "text">Arrghhh... you will die today and join us in death</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoice" onclick="skeleteonFight()">Fight</p1>
+  <p2 id = "heroChoice1" onclick="skeletonDialChoice()">Can we talk?</p2>
+</div>
+</div>
+</dialog>
+<dialog id = "BlightDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "blightH">Blight Demon</h>
+    <img id ="blight" src="./images/blight-removebg-preview (1).png" alt = "dnd">
+  </div>
+  <p id = "BlightText">Are you lost warrior? This is my area</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceBlight" onclick="BlightDialChoice()">And what the hell are you?</p1>
+  <p2 id = "heroChoiceBlight1" onclick="BlightFight()">Fight</p2>
+  <p3 id = "heroChoiceBlight2" onclick="BlightDialChoice1()">I just want to escape</p3>
+  <p4 id = "heroChoiceBlight_1" onclick="BlightFight()">Well, you leave me no choice(fight)</p4>
+</div>
+</div>
+</dialog>
+<dialog id = "DjallDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "djallH">Djall</h>
+    <img id ="djall" src="./images/Djall.png" alt = "dnd">
+  </div>
+  <p id = "DjallText">I've heard of you human...you slained my tarnished</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceDjall" onclick="DjallDialChoice()">So...are you Djall? The God of Death?</p1>
+  <p2 id = "heroChoiceDjall1" onclick="DjallDialChoice1()">Yeah I slained your guard and you're next</p2>
+  <p3 id = "heroChoiceDjall_1" onclick="DjallDialChoice_1()">So this is what happened to your guard? He failed to kill you?</p3>
+  <p4 id = "heroChoiceDjall_2" onclick="DjallDialChoice_2()">It might be pointless to ask, but I just need to escape from this place</p4>
+  <p5 id = "heroChoiceDjall_1_1" onclick="DjallFight()">Fight</p5>
+</div>
+</div>
+</dialog>
+<dialog id = "TerraDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "TerraH">Terra</h>
+    <img id ="terra" src="./images/Terra-removebg-preview.png" alt = "dnd">
+  </div>
+  <p id = "TerraText">Get out of my sight weak creature!</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceTerra" onclick="TerraDialChoice()">Why are you so aggressive?</p1>
+  <p2 id = "heroChoiceTerra1" onclick="TerraDialChoice()">A human? In this place? who are you?</p2>
+  <p3 id = "heroChoiceTerra2" onclick="TerraDialChoice()">Don't get on my nerves or you will be slained</p3>
+  <p4 id = "heroChoiceTerra_1" onclick="TerraDialChoice1()">Djall? Let's team up, I want to escape from this place!</p4>
+  <p5 id = "heroChoiceTerra_2" onclick="TerraDialChoice2()">Weak? You wanna test my power?</p5>
+  <p6 id = "heroChoiceTerra_3" onclick="TerraDialChoice3()">Don't get so hostile, i'm on your side</p6>
+  <p7 id = "heroChoiceTerra_1_1" onclick="TerraDialChoice4()">Why can't we kill him together?</p7>
+  <p8 id = "heroChoiceTerra_1_2" onclick="TerraFight()">Well...if you want to fight me so bad..(fight)</p8>
+</div>
+</div>
+</dialog>
+<dialog id = "SpiderDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "spiderH">Ungol</h>
+    <img id ="spider" src="./images/spider-removebg-preview.png" alt = "dnd">
+  </div>
+  <p id = "SpiderText">Psst...psssst!</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceSpider" onclick="SpiderDialChoice()">Oh no, tell me that you know how to talk</p1>
+  <p2 id = "heroChoiceSpider1" onclick="SpiderFight()">Fight</p2>
+  <p3 id = "heroChoiceSpider_1" onclick="SpiderFight()">We have no choice, but to fight then!(fight)</p3>
+</div>
+</div>
+</dialog>
+<dialog id = "HoarderDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "HoarderH">Hoarder</h>
+    <img id ="hoarder" src="./images/hoarder-removebg-preview.png" alt = "dnd">
+  </div>
+  <p id = "HoarderText">Ohh...another lost traveller. Welcome to Hell!</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceHoarder" onclick="HoarderDialChoice()">What? Will you fight me too?</p1>
+  <p2 id = "heroChoiceHoarder1" onclick="HoarderDialChoice1()">I have no time to talk, I need to kill Djall</p2>
+  <p11 id = "heroChoiceHoarderleave" onclick="HoarderDialleave()">I don't have time to talk to you (leave)</p11>
+  <p3 id = "heroChoiceHoarder_1" onclick="HoarderDialChoice1_1()">I want to kill Djall. Can you help me?</p3>
+  <p4 id = "heroChoiceHoarder_1_1" onclick="HoarderDialChoice1_1_1()">What type of questions? Why should I do that?</p4>
+  <p5 id = "heroChoiceHoarder_1_2" onclick="HoarderDialChoiceQuestion1()">Alright, I'm ready to answer your questions</p5>
+  <p6 id = "heroChoiceHoarder_1_3" onclick="HoarderDialleave()">No, I have no time for that (leave)</p6>
+  <p7 id = "heroChoiceAnswer1" onclick="HoarderDialChoiceAnswer1Yes()">I have no chances</p7>
+  <p8 id = "heroChoiceAnswer2" onclick="HoarderDialChoiceAnswer1No()">I have all chances, Djall will be slained</p8>
+  <p9 id = "heroChoiceAnswer3" onclick="HoarderDialChoiceAnswer1Yes()">I have chances only if you will help me</p9>
+  <p10 id = "heroChoiceAnswer4" onclick="HoarderDialChoiceAnswer1NoNo()">Nobody knows the answer to this question!</p10>
+  <p11 id = "heroChoiceAnswer2_1" onclick="HoarderDialChoiceAnswer2Yes()">Yes? Maybe you don't need to kill Djall to escape</p11>
+  <p12 id = "heroChoiceAnswer2_2" onclick="HoarderDialChoiceAnswer2No()">No? If Djall is undefeated, then you can't escape</p12>
+  <p13 id = "heroChoiceAnswer3_1" onclick="HoarderDialChoiceAnswer3Yes()">Just a hoarder in Hell who wants to help me?</p13>
+  <p14 id = "heroChoiceAnswer3_2" onclick="HoarderDialChoiceAnswer3Yes()">How should I know who you are? Just an old crazy guy?</p14>
+  <p15 id = "heroChoiceAnswer3_3" onclick="HoarderDialChoiceAnswer3Y()">Listen... I really need your help, your questions make no sense</p15>
+  <p16 id = "heroChoiceAnswer4_1" onclick="HoarderDialChoiceAnswer4leave()">Creator of this maze? How is that possible?</p16>
+  <p17 id = "heroChoiceAnswer4_2" onclick="HoarderDialChoiceAnswer4leave()">This weapon... how did you get it?</p17>
+</div>
+</div>
+</dialog>
+<dialog id = "TarnishedDial">
+  <div class id = "npc">
+    <div class = NPCsheet>
+      <h id = "tarnishedH">Tarnished</h>
+    <img id ="tarnished" src="./images/test-removebg-preview.png" alt = "dnd">
+  </div>
+  <p id = "TarnishedText">Step back lost soul, this is Djall's domain</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceTarnished" onclick="TarnishedDialChoice()">I need to kill Djall, out of my way!</p1>
+  <p2 id = "heroChoiceTarnished1" onclick="TarnishedDialChoice1()">Who are you?</p2>
+  <p3 id = "heroChoiceTarnished_1" onclick="TarnishedDialChoice_1()">You tried to kill him? You were also the knight?</p3>
+  <p4 id = "heroChoiceTarnished_2" onclick="TarnishedDialChoice_1()">I don't get it, why are you helping him? Let's kill him together</p4>
+  <p5 id = "heroChoiceTarnished_3" onclick="TarnishedFight()">Then we would never talk again, you will be freed today!(fight)</p5>
+  <p6 id = "heroChoiceTarnished_4" onclick="TarnishedFight()">You have no idea how ready I am (fight)</p6>
+</div>
+</div>
+</dialog>
+<dialog id = "dialog">
+  <div class="box">
+    <img id = "sword" src="./images/sword-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightSwordEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Weapon's name:</p>
+      <p1>Sword</p1>
+  <p2>Weapon damage:</p2>
+  <p3>1</p3>
+  <p4>Weapon crit chance(%):</p4>
+  <p5>1</p5>
+  <p6>Weapon miss chance(%):</p6>
+  <p7>5</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>This is an old rusty sword from your parents</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "skeletonMaceInspect">
+  <div class="box">
+    <img id = "mace" src="./images/mace.png" alt = "swordd">
+    <h button onclick="knightMaceEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Weapon's name:</p>
+      <p1>Skeleton Mace</p1>
+  <p2>Weapon damage:</p2>
+  <p3>4</p3>
+  <p4>Weapon crit chance(%):</p4>
+  <p5>2</p5>
+  <p6>Weapon miss chance(%):</p6>
+  <p7>13</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Heavy mace from defeated skeleton enemy. Hard to hit, but it hurts!</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "diceInspect">
+  <div class="box">
+    <img id = "dice" src="./images/diceStatic-removebg-preview.png" alt = "swordd">
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Item's name:</p>
+      <p1>Dice</p1>
+  <p2>Item's damage:</p2>
+  <p3>?</p3>
+  <p4>Item's crit chance(%):</p4>
+  <p5>?</p5>
+  <p6>Item's miss chance(%):</p6>
+  <p7>?</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Why do you have it? And most importantly - why do you need it?</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "healthPotionIns">
+  <div class="box">
+    <img id = "potion" src="./images/health-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightRestoreHP()">Drink</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Item's name:</p>
+      <p1>health potion</p1>
+  <p2>Item's heal:</p2>
+  <p3>if hp <= 5: heal 5hp</p3>
+  <p10>if hp <= 10: heal 2hp</p10>
+  <p11>if hp > 10: heal 1hp</p11>
+  <p4>Item's crit chance(%):</p4>
+  <p5>0</p5>
+  <p6>Item's miss chance(%):</p6>
+  <p7>0</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Health potion to restore your vitality</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "daggerIns">
+  <div class="box">
+    <img id = "daggerIn" src="./images/dagger-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightDaggerEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Weapon's name:</p>
+      <p1>Lucky one</p1>
+  <p2>Weapon damage:</p2>
+  <p3>1</p3>
+  <p4>Weapon crit chance(%):</p4>
+  <p5>30</p5>
+  <p6>Weapon miss chance(%):</p6>
+  <p7>5</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Quick dagger, low dmg, but it has something unique about it...</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "ringIns">
+  <div class="box">
+    <img id = "ringIn" src="./images/ring-removebg-preview (1).png" alt = "swordd">
+    <h button onclick="knightRingEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Ring's name:</p>
+      <p1>Old ring</p1>
+      <p2>Ring's crit bonus chance</p2>
+      <p3>1</p3>
+  <p4>Ring's hp bonus':</p4>
+  <p5>0</p5>
+  <p6>Ring miss chance(%):</p6>
+  <p7>2</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Old ring, but better than nothing</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "HPringIns">
+  <div class="box">
+    <img id = "HPring" src="./images/ringBlight-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightHPringEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Ring's name:</p>
+      <p1>Ring of Health</p1>
+      <p2>Ring's crit bonus chance</p2>
+      <p3>2</p3>
+      <p4>Ring's hp bonus':</p4>
+      <p5>3</p5>
+      <p6>Ring miss chance(%):</p6>
+      <p7>3</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Beautiful ring that provides decent amount of health</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "armorIns">
+  <div class="box">
+    <img id = "armor" src="./images/armor.png" alt = "swordd">
+    <h button onclick="knightArmorEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Armor's name:</p>
+      <p1>Heavy armor</p1>
+      <p2>Armor's crit bonus chance</p2>
+      <p3>0</p3>
+      <p6>Armor's miss chance(%):</p6>
+      <p7>30</p7>
+      <p10>Armor's protection(from dmg):</p10>
+      <p11>2</p11>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>This armor has a great protection, but it's too heavy</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "greatSwordIns">
+  <div class="box">
+    <img id = "greatS" src="./images/greatsword-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightgreatSEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Weapon's name:</p>
+      <p1>Terra's GreatSword</p1>
+  <p2>Weapon damage:</p2>
+  <p3>6</p3>
+  <p4>Weapon crit chance(%):</p4>
+  <p5>2</p5>
+  <p6>Weapon miss chance(%):</p6>
+  <p7>10</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>This is a well-made GreatSword with an old inscription: To Terra from Father</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "swordOfDjallIns">
+  <div class="box">
+    <img id = "swordOfDjallIn" src="./images/SwordOfDjall-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightSwordOfDjallEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Weapon's name:</p>
+      <p1>Sword Of Djall</p1>
+  <p2>Weapon damage:</p2>
+  <p3>7</p3>
+  <p4>Weapon crit chance(%):</p4>
+  <p5>10</p5>
+  <p6>Weapon miss chance(%):</p6>
+  <p7>5</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>The power within it...how does a mere human can use it?</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "HoarderRingIns">
+  <div class="box">
+    <img id = "HoarderRing" src="./images/HoarderRing-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightHoarderRingEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Ring's name:</p>
+      <p1>Hoarder Ring</p1>
+      <p2>Ring's crit bonus chance</p2>
+      <p3>10</p3>
+      <p4>Ring's hp bonus':</p4>
+      <p5>5</p5>
+      <p6>Ring miss chance(%):</p6>
+      <p7>0</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Ancient ring and powerful ring crafted in madness and pain.</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "infiniteArmorIns">
+  <div class="box">
+    <img id = "InfiniteArmorIn" src="./images/InfiniteArmor-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightInfiniteArmorEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Armor's name:</p>
+      <p1>Heavy armor</p1>
+      <p2>Armor's crit bonus chance</p2>
+      <p3>5</p3>
+      <p6>Armor's miss chance(%):</p6>
+      <p7>0</p7>
+      <p10>Armor's protection(from dmg):</p10>
+      <p11>3</p11>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>This armor can tank nearly any hit</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "eternalRingIns">
+  <div class="box">
+    <img id = "eternalRing" src="./images/EternalRing-removebg-preview.png" alt = "swordd">
+    <h button onclick="knightEternalRingEquip()">Equip</h>
+  </div>
+  <div class = "text">
+    <div class = "weapon">
+      <p>Ring's name:</p>
+      <p1>Eternal Ring</p1>
+      <p2>Ring's crit bonus chance</p2>
+      <p3>7</p3>
+      <p4>Ring's hp bonus':</p4>
+      <p5>7</p5>
+      <p6>Ring miss chance(%):</p6>
+      <p7>3</p7>
+</div>
+<div class = "description">
+  <p8>Description:</p8>
+  <p9>Some people say that the owner of this ring cannot die</p9>
+</div>
+</div>
+</dialog>
+<dialog id = "dialog1">
+  <div class id = "npc">
+    <div class = NPCsheet>
+    <img id = "Aris"  alt = "dnd">
+    <h id = "Aaris">Aris</h>
+  </div>
+  <p id = "arisDial">I'm Aris and... who are you?</p>
+</div>
+<div class id = "Hero">
+  <div class = Herosheet>
+    <h>Knight</h>
+  <img id="knight" src="./images/KnightDIAL-removebg-preview.png" alt = "dnd1">
+  <h1 id = "HP"> </h1>
+</div>
+  <div class = "HeroAns">
+  <p1 id = "heroChoiceAris" onclick="ArisDialChoice1()">I'm a knight</p1>
+  <p2 id = "heroChoiceAris1" onclick="ArisDialChoice2()">it doesn't matter, tell me how to escape!</p2>
+  <p4 id = "heroChoiceAris2" onclick = "ArisDialChoice3()">I don't have time to talk</p4>
+  <p5 id = "heroChoiceAris_1" onclick = "ArisDialChoice1_1()">I'm here to escape</p5>
+  <p6 id = "heroChoiceAris_2" onclick = "ArisDialChoice1_2()">I don't know why I am here...</p6>
+  <p7 id = "heroChoiceAris1_1" onclick = "ArisDialChoice1_1()">What is this place?</p7>
+  <p8 id = "heroChoiceAris1_2" onclick = "ArisDialChoice1_1()">I just need to know how to escape</p8>
+  <p9 id = "heroChoiceAris1_1_1" onclick = "ArisDialChoice1_1_1()">Then I will kill him or... it?</p9>
+  <p10 id = "heroChoiceAris1_1_2" onclick = "ArisDialChoice1_1_1()">Can you help me kill this Djall?</p10>
+  <p11 id = "heroChoiceAris1_1_1_1" onclick = "ArisDialChoice1_1_1_1()">I will find a way! Just help me!</p11>
+  <p12 id = "heroChoiceAris1_1_1_2" onclick = "ArisDialChoice1_1_1_2()">So I should just give up and let him kill me?</p12>
+  <p13 id = "heroChoiceAris1_1_1_1_1" onclick = "ArisDialChoice1_1_1_1_1()">Thanks! (take loot)</p13>
+  <p14 id = "heroChoiceAris1_1_1_1_2" onclick = "justLeaveAris()">I don't need it, i'm better without it (leave)</p14>
+  <p14 id = "heroChoiceArisFINAL" onclick = "justLeaveAris1()">I will destroy Djall(leave)</p14>
+</div>
+</div>
+</dialog>
+<div class id = "test"></div>
+</div>
+  <div class="popup">
+    <span class="popuptext" id="myPopup" onclick="myFunction()">Congrats! You've won! </span>
+  </div>
+  <audio id= "djallPhase" src="./images/videoplayback (mp3cut.net).mp3"></audio>
+  <audio id= "diceRoll" src="./images/rpg-dice-rolling-95182.mp3"></audio>
+  <audio id= "knightScream" src="./images/videoplayback (1) (mp3cut.net).mp3"></audio>
+  <audio id= "knightScream1" src="./images/videoplayback (1) (mp3cut.net) (1).mp3"></audio>
+  <audio id= "knightScream2" src="./images/videoplayback (1) (mp3cut.net) (2).mp3"></audio>
+  <audio id= "SpiderScream" src="./images/videoplayback (2).m4a"></audio>
+  <audio id= "TerraScream" src="./images/videoplayback (3) (mp3cut.net).mp3"></audio>
+  <audio id= "BlightScream" src="./images/monster-211717.mp3"></audio>
+  <audio id= "Music" src="./images/apostatas-177057.mp3" preload="auto" autoplay="true"></audio>
+  <audio id= "MusicDjall" src="./images/do-alto-do-trono-da-desolacao-173741 (1).mp3"></audio>
+  <audio id= "MusicSecond" src="./images/relva-misteriosa-195664.mp3" preload="auto" autoplay="true"></audio>
+  <audio id= "yourDeath" src="./images/djall.mp3" preload="auto" autoplay="true"></audio>
+  <audio id= "MusicThird" src="./images/plano-celestial-181859.mp3" preload="auto" autoplay="true"></audio>
+  </body>
+  <script src="./maze.js"></script>
+</html>

@@ -63,7 +63,7 @@ body{
   position: absolute;
   margin-left: -110px;
 margin-top: -110px;
-background-image: url(/mazepic/__Idle.gif);
+background-image: url(./mazepic/__Idle.gif);
 background-repeat: no-repeat;
 background-size: 250px;
 }
@@ -85,7 +85,7 @@ background-size: 250px;
 }
 
 .testing{
-  background-image: url(/mazepic/__Attack2NoMovement.gif);
+  background-image: url(./mazepic/__Attack2NoMovement.gif);
   background-size: 200px;
   background-position: center;
   position: absolute;
@@ -108,7 +108,7 @@ background-size: 250px;
    display: flex;
    font-family: pixelated;
    z-index: -999;
-   background-image: url(/images/fd-removebg-preview.png);
+   background-image: url(./images/fd-removebg-preview.png);
    /* background-repeat: no-repeat; */
    background-size: 50%;
 }
@@ -265,7 +265,7 @@ img#sword{
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -328,13 +328,13 @@ img#mace{
    background-color: rgb(22, 22, 22);
    width: 800px;
    height: 430px;
-   background-image: url(/images/dungeon\ background\ 7.png);
+   background-image: url(./images/dungeon\ background\ 7.png);
    background-size: 100%;
 }
 
 @font-face{
    font-family: Pixelated;
-   src: url(/images/font/slkscreb.ttf);
+   src: url(./images/font/slkscreb.ttf);
  }
 
 #dialog1 p {
@@ -712,7 +712,7 @@ img#mace{
    background-color: rgb(255, 250, 250);
    font-family: pixelated;
    text-align: center;
-   background-image: url(/images/background_loot.jpg);
+   background-image: url(./images/background_loot.jpg);
    background-size: 120%;
    color: #fff;
    background-repeat: no-repeat;
@@ -775,14 +775,14 @@ img#mace{
    height: 20px;
    width: 15px;
    top: 20px;
-   background-image: url(/images/close-button-png-30230.png);
+   background-image: url(./images/close-button-png-30230.png);
    background-size: 20px;
    background-position: center;
  }
  
  #inventory {
    display: grid;
-   background-image: url(/images/old-paper-background-0adw00dqwib37b91.jpg);
+   background-image: url(./images/old-paper-background-0adw00dqwib37b91.jpg);
    grid-gap: 0px;
    grid-template-columns: repeat(4,minmax(0,1fr));
    grid-template-rows: repeat(5,minmax(0,1r));
@@ -815,7 +815,7 @@ font-size: 25px;
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/hell-background-pb2y5cef9ebsiuhl.jpg);
+  background-image: url(./images/hell-background-pb2y5cef9ebsiuhl.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -956,7 +956,7 @@ img#djall{
   height: 700px;
   text-align: center;
   display: none;
-  background-image: url(/images/finalfight.jpg);
+  background-image: url(./images/finalfight.jpg);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -1065,7 +1065,7 @@ font-size: 25px;
   background-color: rgb(255, 250, 250);
   font-family: pixelated;
   text-align: center;
-  background-image: url(/images/escape.jpg);
+  background-image: url(./images/escape.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
@@ -1094,7 +1094,7 @@ font-size: 25px;
    }
 
    .sword{
-      background-image: url(/images/sword-removebg-preview.png);
+      background-image: url(./images/sword-removebg-preview.png);
       background-repeat: no-repeat;
       background-position: center;
       margin-left: 65px;
@@ -1107,7 +1107,7 @@ font-size: 25px;
    }
 
    .healthPotionINV{
-      background-image: url(/images/health-removebg-preview.png);
+      background-image: url(./images/health-removebg-preview.png);
       background-repeat: no-repeat;
       background-position: center;
       margin-left: 65px;
@@ -1119,7 +1119,7 @@ font-size: 25px;
    }
 
    .skeletonMaceINV{
-      background-image: url(/images/mace.png);
+      background-image: url(./images/mace.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 130px;
@@ -1131,7 +1131,7 @@ font-size: 25px;
    }
 
    .daggerINV{
-      background-image: url(/images/dagger-removebg-preview.png);
+      background-image: url(./images/dagger-removebg-preview.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 130px;
@@ -1143,7 +1143,7 @@ font-size: 25px;
    }
 
    .ringINV{
-      background-image: url(/images/ring-removebg-preview\ \(1\).png);
+      background-image: url(./images/ring-removebg-preview\ \(1\).png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 130px;
@@ -1155,7 +1155,7 @@ font-size: 25px;
    }
 
    .ringOfHealthINV{
-    background-image: url(/images/ringBlight-removebg-preview.png);
+    background-image: url(./images/ringBlight-removebg-preview.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 130px;
@@ -1167,7 +1167,7 @@ font-size: 25px;
  }
 
  .armorOfHealthINV{
-  background-image: url(/images/armor.png);
+  background-image: url(./images/armor.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1179,7 +1179,7 @@ font-size: 25px;
 }
 
 .swordOfDjallINV{
-  background-image: url(/images/SwordOfDjall-removebg-preview.png);
+  background-image: url(./images/SwordOfDjall-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1191,7 +1191,7 @@ font-size: 25px;
 }
 
 .infiniteArmorINV{
-  background-image: url(/images/InfiniteArmor-removebg-preview.png);
+  background-image: url(./images/InfiniteArmor-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1203,7 +1203,7 @@ font-size: 25px;
 }
 
 .hoarderRingINV{
-  background-image: url(/images/HoarderRing-removebg-preview.png);
+  background-image: url(./images/HoarderRing-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1215,7 +1215,7 @@ font-size: 25px;
 }
 
 .greatSwordINV{
-  background-image: url(/images/greatsword-removebg-preview.png);
+  background-image: url(./images/greatsword-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1227,7 +1227,7 @@ font-size: 25px;
 }
 
 .eternalRingINV{
-  background-image: url(/images/EternalRing-removebg-preview.png);
+  background-image: url(./images/EternalRing-removebg-preview.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 130px;
@@ -1243,7 +1243,7 @@ font-size: 25px;
     }
 
    .dice{
-      background-image: url(/images/diceStatic-removebg-preview.png);
+      background-image: url(./images/diceStatic-removebg-preview.png);
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100%;
@@ -1262,7 +1262,7 @@ font-size: 25px;
     display: flex;
     font-family: pixelated;
     z-index: -999;
-    background-image: url(/images/fd-removebg-preview.png);
+    background-image: url(./images/fd-removebg-preview.png);
     /* background-repeat: no-repeat; */
     background-size: 50%;
   }
@@ -1324,7 +1324,7 @@ font-size: 25px;
 
 #HeroStats{
    background: #050505;
-   background-image: url(/images/hero-removebg-preview.png);
+   background-image: url(./images/hero-removebg-preview.png);
    position: absolute;
    border: solid #fffafa;
    border-radius: 70px;
@@ -1354,7 +1354,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   background-size: 50%;
 }
 
@@ -1441,7 +1441,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1523,7 +1523,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1607,7 +1607,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1691,7 +1691,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1785,7 +1785,7 @@ font-size: 25px;
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1867,7 +1867,7 @@ img#greatS{
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -1949,7 +1949,7 @@ img#greatS{
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -2032,7 +2032,7 @@ img#greatS{
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -2126,7 +2126,7 @@ img#greatS{
   display: flex;
   font-family: pixelated;
   z-index: -999;
-  background-image: url(/images/fd-removebg-preview.png);
+  background-image: url(./images/fd-removebg-preview.png);
   /* background-repeat: no-repeat; */
   background-size: 50%;
 }
@@ -2286,7 +2286,7 @@ margin-left: 10px;
    background-color: rgb(255, 250, 250);
    font-family: pixelated;
    text-align: center;
-   background-image: url(/images/background_loot.jpg);
+   background-image: url(./images/background_loot.jpg);
    background-size: 120%;
    color: #fff;
    background-repeat: no-repeat;
@@ -2308,7 +2308,7 @@ margin-left: 10px;
 }
 
 #lootSkelFight .healthPotion{
-   background-image: url(/images/health-removebg-preview.png);
+   background-image: url(./images/health-removebg-preview.png);
    background-repeat: no-repeat;
       background-position: center;
       background-size: 100px;
@@ -2317,7 +2317,7 @@ margin-left: 10px;
 }
 
 #lootSkelFight .skeletonMace{
-   background-image: url(/images/mace.png);
+   background-image: url(./images/mace.png);
    background-repeat: no-repeat;
       background-position: center;
       background-size: 160px;
@@ -2326,7 +2326,7 @@ margin-left: 10px;
 }
 
 #lootAris .dagger{
-   background-image: url(/images/dagger-removebg-preview.png);
+   background-image: url(./images/dagger-removebg-preview.png);
    background-repeat: no-repeat;
       background-position: center;
       background-size: 100px;
@@ -2335,7 +2335,7 @@ margin-left: 10px;
 }
 
 #lootAris .ring{
-   background-image: url(/images/ring-removebg-preview\ \(1\).png);
+   background-image: url(./images/ring-removebg-preview\ \(1\).png);
    background-repeat: no-repeat;
       background-position: center;
       background-size: 90px;
@@ -2344,7 +2344,7 @@ margin-left: 10px;
 }
 
 .skeleton{
-   background-image: url(/images/skeleton-removebg-preview.png);
+   background-image: url(./images/skeleton-removebg-preview.png);
    background-size: 150px;
   background-position: center;
   position: absolute;
@@ -2361,7 +2361,7 @@ display: block;
 }
 
 .Aris{
-   background-image: url(/images/Aris.png);
+   background-image: url(./images/Aris.png);
    background-size: 110px;
   background-position: center;
   position: absolute;
@@ -2401,7 +2401,7 @@ h:hover{
    background-color: rgb(22, 22, 22);
    width: 800px;
    height: 430px;
-   background-image: url(/images/dungeon\ background\ 7.png);
+   background-image: url(./images/dungeon\ background\ 7.png);
    background-size: 100%;
 }
 
@@ -2457,7 +2457,7 @@ h:hover{
    height: 700px;
    text-align: center;
    display: none;
-   background-image: url(/images/dungeon\ background\ 7.png);
+   background-image: url(./images/dungeon\ background\ 7.png);
    background-size: 120%;
    background-position: center;
    background-repeat: no-repeat;
@@ -2571,7 +2571,7 @@ font-size: 25px;
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/dungeon\ background\ 7.png);
+  background-image: url(./images/dungeon\ background\ 7.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -2697,7 +2697,7 @@ img#blight{
   height: 700px;
   text-align: center;
   display: none;
-  background-image: url(/images/dungeon\ background\ 7.png);
+  background-image: url(./images/dungeon\ background\ 7.png);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -2810,7 +2810,7 @@ font-size: 25px;
   background-color: rgb(255, 250, 250);
   font-family: pixelated;
   text-align: center;
-  background-image: url(/images/background_loot.jpg);
+  background-image: url(./images/background_loot.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
@@ -2821,7 +2821,7 @@ font-size: 25px;
 }
 
 #lootblightFight .healthPotion{
-  background-image: url(/images/health-removebg-preview.png);
+  background-image: url(./images/health-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -2830,7 +2830,7 @@ font-size: 25px;
 }
 
 #lootblightFight .ringOfHealth{
-  background-image: url(/images/ringBlight-removebg-preview.png);
+  background-image: url(./images/ringBlight-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 160px;
@@ -2839,7 +2839,7 @@ font-size: 25px;
 }
 
 #lootblightFight .armorOfHealth{
-  background-image: url(/images/armor.png);
+  background-image: url(./images/armor.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -2848,7 +2848,7 @@ font-size: 25px;
 }
 
 .BlightDemonModel{
-  background-image: url(/images/blightDemon-removebg-preview.png);
+  background-image: url(./images/blightDemon-removebg-preview.png);
    background-size: 110px;
   background-position: center;
   position: absolute;
@@ -2877,7 +2877,7 @@ font-size: 25px;
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/dungeon\ background\ 9.png);
+  background-image: url(./images/dungeon\ background\ 9.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -3046,7 +3046,7 @@ font-size: 25px;
   height: 700px;
   text-align: center;
   display: none;
-  background-image: url(/images/dungeon\ background\ 9.png);
+  background-image: url(./images/dungeon\ background\ 9.png);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -3160,7 +3160,7 @@ font-size: 25px;
   background-color: rgb(255, 250, 250);
   font-family: pixelated;
   text-align: center;
-  background-image: url(/images/DungeonBack.jpg);
+  background-image: url(./images/DungeonBack.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
@@ -3171,7 +3171,7 @@ font-size: 25px;
 }
 
 #lootTerraFight .healthPotion{
-  background-image: url(/images/health-removebg-preview.png);
+  background-image: url(./images/health-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -3180,7 +3180,7 @@ font-size: 25px;
 }
 
 #lootTerraFight .greatSword{
-  background-image: url(/images/greatsword-removebg-preview.png);
+  background-image: url(./images/greatsword-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100%;
@@ -3189,7 +3189,7 @@ font-size: 25px;
 }
 
 .TerraModel{
-  background-image: url(/images/TerraModel.png);
+  background-image: url(./images/TerraModel.png);
    background-size: 110px;
   background-position: center;
   position: absolute;
@@ -3220,7 +3220,7 @@ font-size: 25px;
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/backgroundWeb.png);
+  background-image: url(./images/backgroundWeb.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -3321,7 +3321,7 @@ img#spider{
   height: 700px;
   text-align: center;
   display: none;
-  background-image: url(/images/backgroundWeb.png);
+  background-image: url(./images/backgroundWeb.png);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -3435,7 +3435,7 @@ font-size: 25px;
   background-color: rgb(255, 250, 250);
   font-family: pixelated;
   text-align: center;
-  background-image: url(/images/bacgkroundWEBloot.jpg);
+  background-image: url(./images/bacgkroundWEBloot.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
@@ -3446,7 +3446,7 @@ font-size: 25px;
 }
 
 #lootSpiderFight .healthPotion{
-  background-image: url(/images/health-removebg-preview.png);
+  background-image: url(./images/health-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -3455,7 +3455,7 @@ font-size: 25px;
 }
 
 .SpiderModel{
-  background-image: url(/images/spidermodel-removebg-preview.png);
+  background-image: url(./images/spidermodel-removebg-preview.png);
    background-size: 110px;
   background-position: center;
   position: absolute;
@@ -3486,7 +3486,7 @@ font-size: 25px;
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/hoarderBackground.jpg);
+  background-image: url(./images/hoarderBackground.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -3800,7 +3800,7 @@ img#hoarder{
 }
 
 .HoarderModel{
-  background-image: url(/images/image_transparent_Craiyon.png);
+  background-image: url(./images/image_transparent_Craiyon.png);
    background-size: 100px;
   background-position: center;
   position: absolute;
@@ -3836,7 +3836,7 @@ img#hoarder{
   background-color: rgb(22, 22, 22);
   width: 800px;
   height: 430px;
-  background-image: url(/images/dungeon\ background\ 4.png);
+  background-image: url(./images/dungeon\ background\ 4.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -3979,7 +3979,7 @@ img#tarnished{
   height: 700px;
   text-align: center;
   display: none;
-  background-image: url(/images/dungeon\ background\ 4.png);
+  background-image: url(./images/dungeon\ background\ 4.png);
   background-size: 120%;
   background-position: center;
   background-repeat: no-repeat;
@@ -4088,7 +4088,7 @@ font-size: 25px;
   background-color: rgb(255, 250, 250);
   font-family: pixelated;
   text-align: center;
-  background-image: url(/images/bacgkroundWEBloot.jpg);
+  background-image: url(./images/bacgkroundWEBloot.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
@@ -4099,7 +4099,7 @@ font-size: 25px;
 }
 
 #lootTarnishedFight .eternalRing{
-  background-image: url(/images/EternalRing-removebg-preview.png);
+  background-image: url(./images/EternalRing-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -4108,7 +4108,7 @@ font-size: 25px;
 }
 
 #lootTarnishedFight .healthPotion{
-  background-image: url(/images/health-removebg-preview.png);
+  background-image: url(./images/health-removebg-preview.png);
   background-repeat: no-repeat;
      background-position: center;
      background-size: 100px;
@@ -4117,7 +4117,7 @@ font-size: 25px;
 }
 
 .TarnishedModel{
-  background-image: url(/images/TarnishedModel-removebg-preview.png);
+  background-image: url(./images/TarnishedModel-removebg-preview.png);
    background-size: 100px;
   background-position: center;
   position: absolute;
@@ -4152,96 +4152,96 @@ font-size: 25px;
     position: relative;
  }
  .start{
-    background-image: url(/mazepic/start.jpg);
+    background-image: url(./mazepic/start.jpg);
     
  }
  .nextStep{
-   background-image: url(/mazepic/nextStep.jpg);
+   background-image: url(./mazepic/nextStep.jpg);
    
 }
 .image_part_007{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_007.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_007.jpg)
 }
 .pic3{
-   background-image: url(/mazepic/rightWayFromStart/pic3.jpg);
+   background-image: url(./mazepic/rightWayFromStart/pic3.jpg);
 }
 .image_part_032{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_032.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_032.jpg)
 }
 .image_part_047{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_047.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_047.jpg)
 }
 .image_part_092{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_092.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_092.jpg)
 }
 .image_part_107{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_107.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_107.jpg)
 }
 .image_part_122{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_122.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_122.jpg)
 }
 .image_part_149{
-   background-image: url(/mazepic/rightWayFromStart/bottom/image_part_149.jpg)
+   background-image: url(./mazepic/rightWayFromStart/bottom/image_part_149.jpg)
 }
 .image_part_002{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_002.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_002.jpg)
 }
 .image_part_003{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_003.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_003.jpg)
 }
 .image_part_004{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_004.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_004.jpg)
 }
 .image_part_005{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_005.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_005.jpg)
 }
 .image_part_006{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_006.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_006.jpg)
 }
 .image_part_008{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_008.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_008.jpg)
 }
 .image_part_023{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_023.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_023.jpg)
 }
 .image_part_024{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_024.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_024.jpg)
 }
 .image_part_039{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_039.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_039.jpg)
 }
 .image_part_165{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_165.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_165.jpg)
 }
 .image_part_180{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_180.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_180.jpg)
 }
 .image_part_195{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_195.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_195.jpg)
 }
 .image_part_207{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_207.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_207.jpg)
 }
 .image_part_208{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_208.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_208.jpg)
 }
 .image_part_210{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_210.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_210.jpg)
 }
 .image_part_221{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_221.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_221.jpg)
 }
 .image_part_222{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_222.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_222.jpg)
 }
 .image_part_223{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_223.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_223.jpg)
 }
 .image_part_224{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_224.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_224.jpg)
 }
 .image_part_225{
-   background-image: url(/mazepic/rightWayFromStart/upAndRight/image_part_225.jpg)
+   background-image: url(./mazepic/rightWayFromStart/upAndRight/image_part_225.jpg)
 }
 
 .popup {
@@ -4289,7 +4289,7 @@ font-size: 25px;
   background-color: rgb(3, 3, 3);
  font-size: 22px;
   text-align: center;
-  background-image: url(/images/guillaume-lucbert-env2-dungeon.jpg);
+  background-image: url(./images/guillaume-lucbert-env2-dungeon.jpg);
   background-size: 127%;
   background-position: center;
   color: #fff;
@@ -4438,7 +4438,7 @@ font-size: 25px;
   background-position: center;
   font-size: 30px;
   text-align: center;
-  background-image: url(/images/110357366-halloween-day-and-graves-graveyard-space-for-text-vector.jpg);
+  background-image: url(./images/110357366-halloween-day-and-graves-graveyard-space-for-text-vector.jpg);
   background-size: 120%;
   color: #fff;
   background-repeat: no-repeat;
