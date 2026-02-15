@@ -17,6 +17,8 @@ const inv = document.getElementById("inventory");
 
 inv.style.display = "none";
 document.getElementById("Intro").showModal()
+
+const startGame = function (){
 document.getElementById("MusicDjall").pause()
 document.getElementById("Music").pause()
 document.getElementById("MusicSecond").pause()
@@ -26,6 +28,7 @@ document.getElementById("Music").play()
 setTimeout(function () {
   document.getElementById("MusicSecond").play()
 }, 148000);
+}
 
 function swapRu(){
   $(document.getElementById("rules")).toggle() 
@@ -104,10 +107,8 @@ function leaveIntro(){
   },1259000);
 }
 
-// Define the dimension of each grid item in pixels
 const gridSize = 450;
 
-// Define the maze structure as a 2D array with path, wall and end tiles
 const maze = [
       ["start", "wall", "image_part_002", "image_part_003", "image_part_004", "image_part_005", "image_part_006", "image_part_007", "image_part_008", "wall", "wall"],
       ["nextStep", "image_part_007", "pic3", "wall", "wall", "wall", "wall", "wall", "image_part_023", "image_part_024","wall"],
@@ -2648,13 +2649,10 @@ container.style.gridTemplateColumns = 'repeat('+ maze[0].length +', '+gridSize+'
       container.style.top = - (startpoint.y * gridSize) + "px";
       
 
-// Generate a 3x3 loop to create grid items
 for (let i = 0; i < maze.length; i++) {
    for (let j = 0; j < maze[0].length; j++) {
  
-     // Create a new HTML element for the grid item
-     // Add a CSS class to the grid item based on the maze structure
-     // Append the grid item to the container
+
      let cell = document.createElement('div');
      let testing = document.querySelector(".testing");
      let Aris = document.querySelector(".Aris")
@@ -2701,7 +2699,6 @@ for (let i = 0; i < maze.length; i++) {
       y.appendChild(document.querySelector(".TarnishedModel"))
     }
      
-     //initiate the player's starting position
      if(i == startpoint.x && j == startpoint.y){
        cell.classList.add("player");
      }
@@ -2892,15 +2889,12 @@ function leaveTarnishedFight(){
 }
 
 document.getElementById("BlightDial").close();
-//Add an event listener to listen for key-down events
 document.addEventListener("keydown", (event) => {
     
    const key = event.key;
  
-   //Create a temporary cell to select the current player's container
    const tempplayerCell = document.querySelector(".player");
     
-   //Check if the player has already won the game, if yes, do nothing. else, proceed to detect the key pressed
    if (!container.classList.contains("win")) {
  
       if (key === "ArrowUp" && playerRow > 0 && maze[playerRow - 1][playerCol] !== "wall") {
@@ -2926,14 +2920,11 @@ document.addEventListener("keydown", (event) => {
 
      
  
-      //Create a new cell to hold where the player moved to
       let newPlayerCell = container.children[playerRow * maze[0].length + playerCol];
  
-      //Remove the player class from the old cell and add it to the new cell
       tempplayerCell.classList.remove("player");
       newPlayerCell.classList.add("player");
      
-      //check if the player has reached the end-point and won the game, if yes, apply winning effect
       if (newPlayerCell.classList.contains("end")) {
           popup.classList.toggle("show");
         newPlayerCell.classList.add("win");
@@ -2953,7 +2944,8 @@ document.addEventListener("keydown", (event) => {
       }
    }
 });
+
 function tryAgain(){
-  location.reload()
+  location.reload();
 }
 }
