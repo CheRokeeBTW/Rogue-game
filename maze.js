@@ -14,6 +14,7 @@ const arisDial1 = document.getElementById("heroChoiceAris");
 const arisDial2 = document.getElementById("heroChoiceAris1");
 const arisDial3 = document.getElementById("heroChoiceAris2");
 const inv = document.getElementById("inventory");
+const invBtn = document.querySelector("inventoryBtn")
 
 inv.style.display = "none";
 document.getElementById("Intro").showModal()
@@ -1811,11 +1812,13 @@ let InventoryAdd = function () {
      }
 })
 
-document.addEventListener("keydown", function (event){
-   if(event.key == 'CapsLock'){
-      $(document.getElementById("HeroStats")).toggle() 
-     }
-})
+  $(".sword").click(function(){
+   document.getElementById("dialog").showModal();
+});
+
+  $(".inventoryBtn").click(function(){
+    $(inv).toggle() 
+  });
 
 
 //INSPECTION WINDOWS
@@ -2897,22 +2900,22 @@ document.addEventListener("keydown", (event) => {
     
    if (!container.classList.contains("win")) {
  
-      if (key === "ArrowUp" && playerRow > 0 && maze[playerRow - 1][playerCol] !== "wall") {
+      if ( (key === "ArrowUp" || key === "w" || key === "W" || key === "Ц" || key === "ц") && playerRow > 0 && maze[playerRow - 1][playerCol] !== "wall") {
          playerRow--;
          topPosition += gridSize;
                   container.style.top = topPosition + "px";
       }
-      else if (key === "ArrowDown" && playerRow < maze.length - 1 && maze[playerRow + 1][playerCol] !== "wall") {
+      else if ((key === "ArrowDown" || key === "s" || key === "S" || key === "ы" || key === "Ы") && playerRow < maze.length - 1 && maze[playerRow + 1][playerCol] !== "wall") {
          playerRow++;
          topPosition -= gridSize;
                   container.style.top = topPosition + "px";
       }
-      else if (key === "ArrowLeft" && playerCol > 0 && maze[playerRow][playerCol - 1] !== "wall") {
+      else if ((key === "ArrowLeft" || key === "a" || key === "A" || key === "ф" || key === "Ф") && playerCol > 0 && maze[playerRow][playerCol - 1] !== "wall") {
          playerCol--;
          leftPosition += gridSize;
          container.style.left = leftPosition + "px";
       }
-      else if (key === "ArrowRight" && playerCol < maze[0].length - 1 && maze[playerRow][playerCol + 1] !== "wall") {
+      else if ((key === "ArrowRight" || key === "d" || key === "D" || key === "в" || key === "В") && playerCol < maze[0].length - 1 && maze[playerRow][playerCol + 1] !== "wall") {
          playerCol++;
          leftPosition -= gridSize;
          container.style.left = leftPosition + "px";

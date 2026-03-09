@@ -334,18 +334,18 @@ img#mace{
 
 @font-face{
    font-family: Pixelated;
-   src: url(./images/font/slkscreb.ttf);
+   src: url(./images/slkscreb.ttf);
  }
 
 #dialog1 p {
-   overflow: hidden; /* Ensures the content is not revealed until the animation */
-   white-space: nowrap; /* Keeps the content on a single line */
-   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   overflow: hidden; 
+   white-space: nowrap; 
+   margin: auto auto; 
    position: relative;
    margin-top: 20px;
    color: #ffffff;
    font-size: 12px;
-   letter-spacing: .02em; /* Adjust as needed */
+   letter-spacing: .02em; 
    font-family: Pixelated;
    animation: 
      typing 3.5s steps(40, end), 
@@ -357,7 +357,7 @@ img#mace{
    color: #ffffff;
    font-family: Pixelated;
    position: relative;
-   white-space: nowrap; /* Keeps the content on a single line */
+   white-space: nowrap; 
    margin: auto auto;
  }
 
@@ -365,7 +365,7 @@ img#mace{
    color: #fff;
    font-family: Pixelated;
    position: relative;
-   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   margin: auto auto; 
  }
 
  #npc{
@@ -406,12 +406,12 @@ img#mace{
  }
 
  #npc #text{
-   overflow: hidden; /* Ensures the content is not revealed until the animation */
+   overflow: hidden; 
    color: #fff;
    display: inline-block;
    margin-top: 70px;
    width: 300px;
-   letter-spacing: .02em; /* Adjust as needed */
+   letter-spacing: .02em; 
    font-family: Pixelated;
    animation: 
      blink-caret .75s step-end infinite,
@@ -440,11 +440,11 @@ img#mace{
  }
 
  #npc #text1{
-   overflow: hidden; /* Ensures the content is not revealed until the animation */
-   white-space: nowrap; /* Keeps the content on a single line */
+   overflow: hidden; 
+   white-space: nowrap; 
    color: #fff;
    display: inline-block;
-   letter-spacing: .02em; /* Adjust as needed */
+   letter-spacing: .02em; 
    font-family: Pixelated;
    animation: 
      blink-caret .75s step-end infinite,
@@ -791,7 +791,7 @@ img#mace{
    align-items: center;
    grid-column-start:auto;
    grid-row-start:auto;
-   border:solid #fff;
+   border:solid #534e30 3px;
    position: absolute;
    left: 50%;
    margin-left: -450px;
@@ -803,12 +803,28 @@ img#mace{
 }
 
 #inventory h{
-   padding: 20px;
-font-family: pixelated;
-color: #fff;
-margin-left: 115px;
-text-align: center;
-font-size: 25px;
+  padding: 20px;
+  font-family: pixelated;
+  color: #fff;
+  margin-left: 115px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.inventoryBtn{
+  background: none;
+  border: none;
+}
+
+.headerBtn{
+  margin-left: 0px !important;
+  margin-bottom: 80px;
+  margin-right: 35px;
+}
+
+.inventoryBtn img{
+  width: 30px;
+  cursor: pointer;
 }
 
 #DjallDial{
@@ -2406,14 +2422,14 @@ h:hover{
 }
 
 #skeletonFight p {
-   overflow: hidden; /* Ensures the content is not revealed until the animation */
-   white-space: nowrap; /* Keeps the content on a single line */
-   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   overflow: hidden; 
+   white-space: nowrap; 
+   margin: auto auto; 
    position: relative;
    margin-top: 20px;
    color: #ffffff;
    font-size: 12px;
-   letter-spacing: .02em; /* Adjust as needed */
+   letter-spacing: .02em; 
    font-family: Pixelated;
    animation: 
      typing 3.5s steps(40, end), 
@@ -2425,15 +2441,15 @@ h:hover{
    color: #ffffff;
    font-family: Pixelated;
    position: relative;
-   white-space: nowrap; /* Keeps the content on a single line */
-   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   white-space: nowrap; 
+   margin: auto auto; 
  }
 
  #skeletonFight p1{
    color: #fff;
    font-family: Pixelated;
    position: relative;
-   margin: auto auto; /* Gives that scrolling effect as the typing happens */
+   margin: auto auto; 
  }
 
  #skeletonFight img{
@@ -2584,14 +2600,14 @@ font-size: 25px;
  }
 
  #BlightDial p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap;
+  margin: auto auto; 
   position: relative;
   top: 70px;
   color: #ffffff;
   font-size: 12px;
-  letter-spacing: .02em; /* Adjust as needed */
+  letter-spacing: .02em; 
   font-family: Pixelated;
   animation: 
     typing 3.5s steps(40, end), 
@@ -2883,14 +2899,14 @@ font-size: 25px;
 }
 
 #TerraDial p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap;
+  margin: auto auto; 
   position: relative;
   top: 70px;
   color: #ffffff;
   font-size: 12px;
-  letter-spacing: .02em; /* Adjust as needed */
+  letter-spacing: .02em; 
   font-family: Pixelated;
   animation: 
     typing 3.5s steps(40, end), 
@@ -3226,14 +3242,14 @@ font-size: 25px;
 }
 
 #SpiderDial p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap;
+  margin: auto auto;
   position: relative;
   top: 70px;
   color: #ffffff;
   font-size: 12px;
-  letter-spacing: .02em; /* Adjust as needed */
+  letter-spacing: .02em; 
   font-family: Pixelated;
   animation: 
     typing 3.5s steps(40, end), 
@@ -3492,14 +3508,14 @@ font-size: 25px;
 }
 
 #HoarderDial p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap; 
+  margin: auto auto; 
   position: relative;
   top: 70px;
   color: #ffffff;
   font-size: 12px;
-  letter-spacing: .02em; /* Adjust as needed */
+  letter-spacing: .02em; 
   font-family: Pixelated;
   animation: 
     typing 3.5s steps(40, end), 
@@ -3826,7 +3842,6 @@ img#hoarder{
   position: absolute;
 }
 
- /*Style the main avatar- winning effect*/
  #main_viewport.win::before{
    background-color: purple;
 }
@@ -3842,14 +3857,14 @@ img#hoarder{
 }
 
 #TarnishedDial p {
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: auto auto; /* Gives that scrolling effect as the typing happens */
+  overflow: hidden; 
+  white-space: nowrap; 
+  margin: auto auto; 
   position: relative;
   top: 70px;
   color: #ffffff;
   font-size: 12px;
-  letter-spacing: .02em; /* Adjust as needed */
+  letter-spacing: .02em; 
   font-family: Pixelated;
   animation: 
     typing 3.5s steps(40, end), 
