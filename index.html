@@ -480,7 +480,10 @@
 <dialog id = "dialog">
   <div class="box">
     <img id = "sword" src="./images/sword-removebg-preview.png" alt = "swordd">
-    <h button onclick="knightSwordEquip()">Equip</h>
+    <button id = "equip" onclick="knightSwordEquip()">Equip</button>
+    <button id = "unequip" onclick="weaponUnequip()">
+    unequip
+  <button>
   </div>
   <div class = "text">
     <div class = "weapon">
@@ -502,7 +505,10 @@
 <dialog id = "skeletonMaceInspect">
   <div class="box">
     <img id = "mace" src="./images/mace.png" alt = "swordd">
-    <h button onclick="knightMaceEquip()">Equip</h>
+    <button id = "equipMace" onclick="knightMaceEquip()">Equip</button>
+      <button id = "unequipMace" onclick="maceUnequip()">
+        unequip
+      <button>
   </div>
   <div class = "text">
     <div class = "weapon">
@@ -569,7 +575,8 @@
 <dialog id = "daggerIns">
   <div class="box">
     <img id = "daggerIn" src="./images/dagger-removebg-preview.png" alt = "swordd">
-    <h button onclick="knightDaggerEquip()">Equip</h>
+    <button id = "equipDagger" onclick="knightDaggerEquip()">Equip</button>
+    <button id = "unequipDagger" onclick="daggerUnequip()">unequip</button>
   </div>
   <div class = "text">
     <div class = "weapon">
@@ -657,7 +664,8 @@
 <dialog id = "greatSwordIns">
   <div class="box">
     <img id = "greatS" src="./images/greatsword-removebg-preview.png" alt = "swordd">
-    <h button onclick="knightgreatSEquip()">Equip</h>
+    <h button id = "equipGreatS" onclick="knightgreatSEquip()">Equip</button>
+    <h button id = "unequipGreatS" onclick="greatSUnequip()">Equip</button>
   </div>
   <div class = "text">
     <div class = "weapon">
@@ -679,7 +687,8 @@
 <dialog id = "swordOfDjallIns">
   <div class="box">
     <img id = "swordOfDjallIn" src="./images/SwordOfDjall-removebg-preview.png" alt = "swordd">
-    <h button onclick="knightSwordOfDjallEquip()">Equip</h>
+    <button id = "equipSwordOfDjall" onclick="knightSwordOfDjallEquip()">Equip</button>
+    <button id = "unequipSwordOfDjall" onclick="greatSUnequip()">unequip</button>
   </div>
   <div class = "text">
     <div class = "weapon">

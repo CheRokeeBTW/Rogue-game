@@ -14,7 +14,20 @@ const arisDial1 = document.getElementById("heroChoiceAris");
 const arisDial2 = document.getElementById("heroChoiceAris1");
 const arisDial3 = document.getElementById("heroChoiceAris2");
 const inv = document.getElementById("inventory");
-const invBtn = document.querySelector("inventoryBtn")
+const invBtn = document.querySelector("inventoryBtn");
+const equipBtn = document.getElementById("equip");
+const equipBtnMace = document.getElementById("equipMace");
+const equipBtnDagger = document.getElementById("equipDagger");
+const equipBtnGreatS = document.getElementById("equipGreatS");
+const equipBtnDjaalS = document.getElementById("equipGreatS");
+const unequipBtn = document.getElementById("unequip");
+const unequipBtnMace = document.getElementById("unequipMace");
+const unequipBtnDagger = document.getElementById("unequipDagger");
+const unequipBtnGreatS = document.getElementById("unequipGreatS");
+const unequipBtnDjaalS = document.getElementById("unequipGreatS");
+
+unequipBtn.style.display = "none";
+unequipBtnMace.style.display = "none";
 
 inv.style.display = "none";
 document.getElementById("Intro").showModal()
@@ -2164,6 +2177,11 @@ function knightSwordEquip(){
   }
   knight.getWeapon("Sword", 1, 0.01, 0.05)
   document.getElementById("dialog").close()
+  equipBtn.style.display = "none";
+  unequipBtn.style.display = "inline-block";
+  unequipBtn.style.position = "absolute";
+  unequipBtn.style.left = "140px";
+  unequipBtn.style.top = "400px";
 }
 
 function knightMaceEquip(){
@@ -2172,6 +2190,11 @@ function knightMaceEquip(){
     }
   knight.getWeapon("Skeleton Mace", 4, 0.02, 0.13)
   document.getElementById("skeletonMaceInspect").close()
+  equipBtnMace.style.display = "none";
+  unequipBtnMace.style.display = "inline-block";
+  unequipBtnMace.style.position = "absolute";
+  unequipBtnMace.style.left = "140px";
+  unequipBtnMace.style.top = "400px";
 }
 
 function knightRestoreHP(){
@@ -2194,6 +2217,11 @@ function knightRestoreHP(){
       }
     knight.getWeapon("Lucky one", 1, 0.3, 0.05)
     document.getElementById("daggerIns").close()
+    equipBtnDagger.style.display = "none";
+    unequipBtnDagger.style.display = "inline-block";
+    unequipBtnDagger.style.position = "absolute";
+    unequipBtnDagger.style.left = "140px";
+    unequipBtnDagger.style.top = "400px";
   }
 
   function knightRingEquip(){
@@ -2226,6 +2254,11 @@ function knightRestoreHP(){
       }
     knight.getWeapon("Terra's GreatSword", 6, 0.02, 0.1)
     document.getElementById("greatSwordIns").close()
+    equipBtnGreatS.style.display = "none";
+    unequipBtnGreatS.style.display = "inline-block";
+    unequipBtnGreatS.style.position = "absolute";
+    unequipBtnGreatS.style.left = "140px";
+    unequipBtnGreatS.style.top = "400px";
   }
 
   function knightSwordOfDjallEquip(){
@@ -2234,6 +2267,11 @@ function knightRestoreHP(){
       }
     knight.getWeapon("Sword Of Djall", 7, 0.1, 0.05)
     document.getElementById("swordOfDjallIns").close()
+    equipBtnDjaalS.style.display = "none";
+    unequipBtnDjaalS.style.display = "inline-block";
+    unequipBtnDjaalS.style.position = "absolute";
+    unequipBtnDjaalS.style.left = "140px";
+    unequipBtnDjaalS.style.top = "400px";
   }
 
   function knightHoarderRingEquip(){
@@ -2268,6 +2306,48 @@ function knightRestoreHP(){
   
   document.getElementById("healthPotionIns").close()
   document.getElementById("skeletonMaceInspect").close()
+
+  //unequip functions
+
+function weaponUnequip() {
+  knight.removeWeapon();
+  document.getElementById("dialog").close()
+  unequipBtn.style.display = "none";
+  equipBtn.style.display = "inline-block";
+  equipBtn.style.position = "absolute";
+  equipBtn.style.left = "150px";
+  equipBtn.style.top = "400px";
+}
+
+function maceUnequip() {
+  knight.removeWeapon();
+  document.getElementById("skeletonMaceInspect").close()
+  unequipBtnMace.style.display = "none";
+  equipBtnMace.style.display = "inline-block";
+  equipBtnMace.style.position = "absolute";
+  equipBtnMace.style.left = "150px";
+  equipBtnMace.style.top = "400px";
+}
+
+function daggerUnequip() {
+  knight.removeWeapon();
+  document.getElementById("daggerIns").close()
+  unequipBtnDagger.style.display = "none";
+  equipBtnDagger.style.display = "inline-block";
+  equipBtnDagger.style.position = "absolute";
+  equipBtnDagger.style.left = "150px";
+  equipBtnDagger.style.top = "400px";
+}
+
+function greatSUnequip() {
+  knight.removeWeapon();
+  document.getElementById("greatSwordIns").close()
+  unequipBtnGreatS.style.display = "none";
+  equipBtnGreatS.style.display = "inline-block";
+  equipBtnGreatS.style.position = "absolute";
+  equipBtnGreatS.style.left = "150px";
+  equipBtnGreatS.style.top = "400px";
+}
 
 //RANDOM DICE NUMBER for Skel fight
 

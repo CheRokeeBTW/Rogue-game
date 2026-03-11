@@ -113,65 +113,6 @@ background-size: 250px;
    background-size: 50%;
 }
 
-/* .box #sword{
-   width: 350px;
-   height: 350px;
-}
-
-.box {
-   height: 350px;
-   width: 350px;
-   position: relative;
- }
-
-.box__line {
-   position: absolute;
-   background: rgb(109, 109, 107);
- }
- .box__line--top, .box__line--bottom {
-   height: 8px;
-   width: 100%;
- }
- .box__line--top::before, .box__line--top::after, .box__line--bottom::before, .box__line--bottom::after {
-   content: "";
-   position: absolute;
-   width: 8px;
-   height: 8px;
-   background: rgb(109, 109, 107);
- }
- .box__line--top {
-   top: -8px;
- }
- .box__line--top::before {
-   left: 0;
-   bottom: -8px;
- }
- .box__line--top::after {
-   right: 0;
-   bottom: -8px;
- }
- .box__line--bottom {
-   bottom: -8px;
- }
- .box__line--bottom::before {
-   left: 0;
-   top: -8px;
- }
- .box__line--bottom::after {
-   right: 0;
-   top: -8px;
- }
- .box__line--left, .box__line--right {
-   width: 8px;
-   height: 100%;
- }
- .box__line--left {
-   left: -8px;
- }
- .box__line--right {
-   right: -8px;
- } */
-
  .weapon{
   margin-top: -100px;
   align-self: center;
@@ -233,12 +174,16 @@ img#sword{
   margin-top: 30px;
 }
 
-.box h{
+.box button{
   position: absolute;
   top: 400px;
   left: 150px;
-  border-bottom: solid #ffffff;
   color: #ffffff;
+  font-family: pixelated;
+  border: none;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline 3px;
 }
 
 #dialog1::backdrop {
