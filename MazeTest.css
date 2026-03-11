@@ -1504,7 +1504,7 @@ font-size: 25px;
 
 #ringIns .text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 
@@ -1588,7 +1588,7 @@ font-size: 25px;
 
 #HPringIns .text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 
@@ -1673,7 +1673,7 @@ font-size: 25px;
 
 #armorIns .text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 
@@ -1930,7 +1930,7 @@ img#greatS{
 
 #HoarderRingIns  .text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 
@@ -2014,7 +2014,7 @@ img#greatS{
 
 #infiniteArmorIns .text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 
@@ -2108,7 +2108,7 @@ img#greatS{
 
 #eternalRingIns.text{
   display: grid;
-  margin-left: 55px;
+  margin-left: -15px;
   font-size: 13px;
 }
 

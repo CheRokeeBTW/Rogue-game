@@ -28,6 +28,9 @@ const unequipBtnDjaalS = document.getElementById("unequipGreatS");
 
 unequipBtn.style.display = "none";
 unequipBtnMace.style.display = "none";
+unequipBtnDagger.style.display = "none";
+unequipBtnGreatS.style.display = "none";
+unequipBtnDjaalS.style.display = "none";
 
 inv.style.display = "none";
 document.getElementById("Intro").showModal()
